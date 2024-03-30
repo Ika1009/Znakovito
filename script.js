@@ -50,12 +50,18 @@ function displaySignLanguage(text) {
     clearSignLanguage();
     // Assuming 'text' is the input text
     const container = document.getElementById('sign-language-container');
-    
+        
     // Loop through each word in the input text
     text.split(' ').forEach(word => {
         // Loop through each letter in the word
         for (let i = 0; i < word.length; i++) {
-            const letter = word[i].toLowerCase(); // Assuming your image filenames are lowercase
+            let letter = word[i].toLowerCase(); // Assuming your image filenames are lowercase
+            
+            // Check if the character is from Cyrillic script
+            if (/[\u0400-\u04FF]/.test(letter)) { // Range for Cyrillic characters
+                // Convert Cyrillic to Latin script if applicable
+                letter = convertToLatin(letter);
+            }
             
             // Create an image element
             const img = document.createElement('img');
@@ -75,6 +81,19 @@ function displaySignLanguage(text) {
         space.height = 5;
         container.appendChild(space);
     });
+    
+    // Function to convert Cyrillic to Latin script
+    function convertToLatin(char) {
+        // Define a mapping between Cyrillic and Latin characters
+        const cyrillicToLatinMap = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'ђ': 'đ', 'е': 'e', 'ж': 'ž', 'з': 'z', 'и': 'i',
+            'ј': 'j', 'к': 'k', 'л': 'l', 'љ': 'lj', 'м': 'm', 'н': 'n', 'њ': 'nj', 'о': 'o', 'п': 'p', 'р': 'r',
+            'с': 's', 'т': 't', 'ћ': 'ć', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'č', 'џ': 'dž', 'ш': 'š'
+        };
+        
+        // If the character exists in the mapping, return its Latin counterpart, otherwise return the original character
+        return cyrillicToLatinMap[char] || char;
+    }
 
 }
 
