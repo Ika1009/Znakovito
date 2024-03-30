@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["index.html", "kviz.html"],
+  content: ["./*.html"],
   theme: {
     extend: {
       colors: {
@@ -11,7 +11,6 @@ module.exports = {
       'accent': '#f9e248',
      },
      },
-    
   },
   plugins: [],
 }
