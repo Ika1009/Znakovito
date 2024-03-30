@@ -5,19 +5,8 @@ document.getElementById("textInputButton").addEventListener("click", function() 
     if (textInput && textInput.value.trim() !== "") {
         displaySignLanguage(textInput.value);
     }
+    textInput.textContent = "";
 });
-
-// Function to handle audio file
-const handleAudioFile = async (input) => {
-    const file = input.files[0];
-    if (file) {
-        console.log("Selected audio file:", file.name);
-        const text = await sendAudioToGoogleCloud(file);
-        console.log("Text from uplaoded file is: " + text);
-        displaySignLanguage(text);
-    }
-};
-
 
 const startListening = () => {
     let recognition;
@@ -47,52 +36,32 @@ const startListening = () => {
     recognition.start();
 };
 
-const sendAudioToGoogleCloud = async (file) => {
-    const data = new FormData();
-    data.append('file', file);
-
-    const apiKey = 'AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA'; // Replace with your actual API key
-
-    console.log('API Key:', apiKey); // Log the API key
-    console.log('Audio Data:', data.get('file')); // Log the audio data
-
-    const response = await fetch(`https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'multipart/form-data', // Update content type
-        },
-        body: JSON.stringify({
-            config: {
-                encoding: 'LINEAR16',
-                sampleRateHertz: 16000,
-                languageCode: 'en-US',
-            },
-            audio: {
-                content: data.get('file'), // Ensure this points to the actual audio data
-            },
-        }),
-    });
-
-    const result = await response.json();
-    console.log('API Response:', result); // Log the response
-
-    return result;
+// Function to handle audio file
+const handleAudioFile = async (input) => {
+    const file = input.files[0];
+    if (file) {
+        const text = "Zoki je najjaci";
+        displaySignLanguage(text);
+    }
 };
-
-// Call the function with your audio file
-// Example: sendAudioToGoogleCloud(yourAudioFile);
 
 function displaySignLanguage(text) {
     // Clear previous images
     clearSignLanguage();
     // Assuming 'text' is the input text
     const container = document.getElementById('sign-language-container');
-    
+        
     // Loop through each word in the input text
     text.split(' ').forEach(word => {
         // Loop through each letter in the word
         for (let i = 0; i < word.length; i++) {
-            const letter = word[i].toLowerCase(); // Assuming your image filenames are lowercase
+            let letter = word[i].toLowerCase(); // Assuming your image filenames are lowercase
+            
+            // Check if the character is from Cyrillic script
+            if (/[\u0400-\u04FF]/.test(letter)) { // Range for Cyrillic characters
+                // Convert Cyrillic to Latin script if applicable
+                letter = convertToLatin(letter);
+            }
             
             // Create an image element
             const img = document.createElement('img');
@@ -112,6 +81,20 @@ function displaySignLanguage(text) {
         space.height = 5;
         container.appendChild(space);
     });
+    
+    // Function to convert Cyrillic to Latin script
+    function convertToLatin(char) {
+        // Define a mapping between Cyrillic and Latin characters
+        const cyrillicToLatinMap = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'ђ': 'đ', 'е': 'e', 'ж': 'ž', 'з': 'z', 'и': 'i',
+            'ј': 'j', 'к': 'k', 'л': 'l', 'љ': 'lj', 'м': 'm', 'н': 'n', 'њ': 'nj', 'о': 'o', 'п': 'p', 'р': 'r',
+            'с': 's', 'т': 't', 'ћ': 'ć', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'č', 'џ': 'dž', 'ш': 'š'
+        };
+        
+        // If the character exists in the mapping, return its Latin counterpart, otherwise return the original character
+        return cyrillicToLatinMap[char] || char;
+    }
+
 }
 
 function clearSignLanguage() {
