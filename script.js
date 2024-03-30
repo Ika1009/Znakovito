@@ -1,8 +1,5 @@
 document.getElementById("textInputButton").addEventListener("click", function() {
     const textInput = document.getElementById("textInput");
-    
-    // Clear previous images
-    clearSignLanguage();
 
     // Check if the input field is not null and has a value
     if (textInput && textInput.value.trim() !== "") {
@@ -12,7 +9,6 @@ document.getElementById("textInputButton").addEventListener("click", function() 
 
 // Function to handle audio file
 const handleAudioFile = async (input) => {
-    clearSignLanguage();
     const file = input.files[0];
     if (file) {
         console.log("Selected audio file:", file.name);
@@ -79,6 +75,8 @@ const sendAudioToGoogleCloud = async (file) => {
 };
 
 function displaySignLanguage(text) {
+    // Clear previous images
+    clearSignLanguage();
     // Assuming 'text' is the input text
     const container = document.getElementById('sign-language-container');
     
