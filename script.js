@@ -1,12 +1,19 @@
 document.getElementById("textInputButton").addEventListener("click", function() {
     const textInput = document.getElementById("textInput");
     
+    // Clear previous images
+    clearSignLanguage();
+
     // Check if the input field is not null and has a value
     if (textInput && textInput.value.trim() !== "") {
         displaySignLanguage(textInput.value);
     }
 });
 
+function clearSignLanguage() {
+    const container = document.getElementById('sign-language-container');
+    container.innerHTML = ''; // Clear the container content
+}
 
 const handleAudioFile = (input) => {
     const file = input.files[0];
