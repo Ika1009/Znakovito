@@ -2,7 +2,8 @@
 module.exports = {
   content: ["index.html", "auth/signup.html", "auth/login.html",],
   theme: {
-    extend: {colors: {
+    extend: {
+      colors: {
       'text': '#070704',
       'background': '#fbfaf5',
       'primary': '#fbda03',
