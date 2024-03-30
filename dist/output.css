@@ -589,20 +589,12 @@ html {
   height: 2.5rem;
 }
 
-.h-svh{
-  height: 100svh;
-}
-
 .min-h-screen{
   min-height: 100vh;
 }
 
 .w-10{
   width: 2.5rem;
-}
-
-.w-auto{
-  width: auto;
 }
 
 .w-full{
@@ -633,6 +625,10 @@ html {
   justify-content: center;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
 .rounded-xl{
   border-radius: 0.75rem;
 }
@@ -650,11 +646,6 @@ html {
   border-color: rgb(96 165 250 / var(--tw-border-opacity));
 }
 
-.bg-gray-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(251 218 3 / var(--tw-bg-opacity));
@@ -665,20 +656,17 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-background{
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 250 245 / var(--tw-bg-opacity));
+}
+
 .p-6{
   padding: 1.5rem;
 }
 
 .text-center{
   text-align: center;
-}
-
-.align-middle{
-  vertical-align: middle;
-}
-
-.font-sans{
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .text-xl{

@@ -37,9 +37,9 @@ const startListening = () => {
 
     recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
-        document.getElementById('transcription').textContent = transcript;
+        // document.getElementById('transcription').textContent = transcript;
 
-        console.log('Transcribed text:', transcript);
+        console.log('Transcribed text: ', transcript);
         displaySignLanguage(transcript);
     };
 
@@ -62,6 +62,9 @@ function displaySignLanguage(text) {
             
             // Create an image element
             const img = document.createElement('img');
+            img.width = 100;
+            img.height = 100;
+            // img.style.objectFit = "contain";
             img.src = `./znakovi/${letter}.png`; // Assuming the images are stored in the 'znakovi' directory
             img.alt = letter; // Set alt text for accessibility
             
@@ -70,7 +73,9 @@ function displaySignLanguage(text) {
         }
         
         // Add a space between words
-        const space = document.createTextNode(' ');
+        const space = document.createElement('div');
+        space.width = 500;
+        space.height = 5;
         container.appendChild(space);
     });
 }
