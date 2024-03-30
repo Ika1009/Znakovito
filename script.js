@@ -124,11 +124,46 @@ const selectLanguage = (langCode) => {
     switch(langCode) {
       case 'en':
         selectedLanguage.textContent = "English";
+        inputFileText.textContent = "Input File";
+        uploadFileText.textContent = "Upload or drag & drop your file.";
+        textInput.placeholder = "Type here";
+        textInputButton.textContent = "Submit";
         break;
       case 'fr':
-        selectedLanguage.textContent = "French";
+        selectedLanguage.textContent = "Francuski";
+        inputFileText.textContent = "Fichier d'entrée";
+        uploadFileText.textContent = "Téléchargez ou glissez-déposez votre fichier.";
+        textInput.placeholder = "Écrivez ici";
+        textInputButton.textContent = "Soumettre";
         break;
-      // Add cases for more languages as needed
+      case 'sr':
+        selectedLanguage.textContent = "Srpski";
+        inputFileText.textContent = "Улазни документ";
+        uploadFileText.textContent = "Отпремите или превуците и отпустите своју датотеку";
+        textInput.placeholder = "Откуцајте овде";
+        textInputButton.textContent = "Потврди";
+        break;
+      case 'de':
+        selectedLanguage.textContent = "Nemački";
+        inputFileText.textContent = "Eingabedatei";
+        uploadFileText.textContent = "Laden Sie Ihre Datei hoch oder ziehen Sie sie per Drag & Drop";
+        textInput.placeholder = "Geben Sie hier ein";
+        textInputButton.textContent = "Einreichen";
+        break;
+      case 'it':
+        selectedLanguage.textContent = "Italijanski";
+        inputFileText.textContent = "File di input";
+        uploadFileText.textContent = "Carica o trascina e rilascia il tuo file";
+        textInput.placeholder = "Digitare qui";
+        textInputButton.textContent = "Invia";
+        break;
+      case 'es':
+        selectedLanguage.textContent = "Španski";
+        inputFileText.textContent = "Entrada de archivo";
+        uploadFileText.textContent = "Sube o arrastra y suelta tu archivo";
+        textInput.placeholder = "Escriba aquí";
+        textInputButton.textContent = "Entregar";
+        break;
       default:
         selectedLanguage.textContent = "Select Language";
     }

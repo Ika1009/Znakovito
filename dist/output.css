@@ -560,18 +560,6 @@ html {
   --tw-contain-style:  ;
 }
 
-.sr-only{
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 .absolute{
   position: absolute;
 }
@@ -625,10 +613,6 @@ html {
   display: inline-block;
 }
 
-.inline{
-  display: inline;
-}
-
 .flex{
   display: flex;
 }
@@ -645,10 +629,6 @@ html {
   height: 2.5rem;
 }
 
-.h-4{
-  height: 1rem;
-}
-
 .h-5{
   height: 1.25rem;
 }
@@ -663,10 +643,6 @@ html {
 
 .w-16{
   width: 4rem;
-}
-
-.w-4{
-  width: 1rem;
 }
 
 .w-5{
@@ -985,11 +961,6 @@ html {
 .group:focus-within .group-focus-within\:bg-blue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
-.group:focus-within .group-focus-within\:text-blue-400{
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
 .group:focus-within .group-focus-within\:hover\:bg-blue-600:hover{
