@@ -1,25 +1,39 @@
-# 🤟 Znakovito 🌍
+# Welcome to Znakovito: Your Guide to World Sign Languages! 🌟
 
-Znakovito is a groundbreaking web application born out of the Fon Hakaton competition in Serbia, where the challenge was to devise a software solution to bridge the language barrier. Our team has crafted a unique solution to empower users to overcome linguistic obstacles by providing a platform that facilitates communication through sign language.
+Learn, Understand, Connect - All with one application!
 
-## Key Features:
-- **Universal Translation**: Znakovito allows users to input text in any language and converts it into sign language, making communication accessible to diverse linguistic communities.
-- **Speech-to-Sign**: With its innovative speech-to-sign feature, Znakovito enables users to communicate verbally with sign language speakers, fostering seamless interaction and understanding.
-- **Language Learning**: Beyond breaking communication barriers, Znakovito serves as a valuable tool for language learning, offering users an immersive experience in both written and sign languages.
-- **Inclusive Support**: Designed with inclusivity in mind, Znakovito aims to bridge the gap between deaf individuals and the hearing community, fostering understanding and connection.
-- **Multilingual Support**: Znakovito stands out as the world's only software solution supporting Serbian, Bosnian, and Croatian languages, catering to the linguistic needs of the region like no other platform.
+---
 
-## How It Works:
-1. **Input Text**: Users can type or paste text in any language into the Znakovito interface.
-2. **Translation**: Znakovito processes the text and translates it into sign language gestures.
-3. **Communication**: The translated sign language is displayed, enabling effective communication with sign language speakers.
-4. **Learning**: Users can also use Znakovito as a learning tool to familiarize themselves with sign language or new spoken languages.
+### Why Znakovito?
 
-## Mission:
-Znakovito's mission is to democratize communication by eliminating language barriers and promoting inclusivity. We believe that everyone deserves the opportunity to express themselves freely, regardless of linguistic or hearing differences.
+🌍 **World Sign Languages**: Different countries, different sign languages. With Znakovito, overcome language barriers and learn sign language from any country.
 
-Join us on our journey to create a world where communication knows no boundaries with Znakovito! 🌐✨
+🔊 **Audio and Text Translation**: Whether you're using voice messages, text input, or audio files, Znakovito offers precise translation into sign language - adapted to different local dialects.
 
-Visit Znakovito and start breaking down barriers today.
+🧠 **Learning Through Games**: Explore our single-player quiz, which allows for quick learning of new sign languages while traveling abroad or preparing for communication in new locations.
 
-*Note: Znakovito was created as a project for the Fon Hakaton competition in Serbia and continues to evolve with the support of our dedicated team.* 🚀🔍
+💑 **Two-player Quiz**: Feel connected with your partner, friend, or family member through a challenging quiz, where your sign language skills are scored.
+
+---
+
+### Statistics:
+
+There are over 466 million people who are deaf or hard of hearing worldwide. That means sign language is important to know to make the world a better place
+
+---
+
+Our application allows users to learn sign languages quickly and efficiently. Whether you are traveling abroad or want to communicate with deaf or hard of hearing individuals, our application helps you master basic signs.
+With our application, you can learn sign languages from different countries. Discover the differences and similarities between them and be prepared for your travels.
+
+### Why Learning Sign Languages is Important?
+
+**Marriages and Relationships**: Statistics show that couples who communicate using sign language have stronger bonds and better understanding.
+
+**Easier Traveling**: Different countries have different sign languages. Our application allows you to prepare for travels and communicate with local populations.
+
+**Breaking Language Barriers**: Sign languages are universal. Learn them and facilitate communication with deaf or hard of hearing individuals worldwide.
+
+Join Our Community and Explore World Sign Languages!
+Let signs become your language! 🤟🌍
+
+*Znakovito - Learn, Understand, Connect!* 🌟
