@@ -101,9 +101,9 @@ function displaySignLanguage(text) {
         const space = document.createTextNode(' ');
         container.appendChild(space);
     });
-    
- function clearSignLanguage() {
+}
+
+function clearSignLanguage() {
     const container = document.getElementById('sign-language-container');
     container.innerHTML = ''; // Clear the container content
  }
-}
