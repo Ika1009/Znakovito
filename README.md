@@ -27,8 +27,8 @@
    - Odabir **preferiranog jezika**
    - Upravljanje **privatnošću i dozvolama**
    - **Pomoć i podrška** korisnicima
-
-6. **Profil Korisnika (User Profile)**
    - Prikaz **informacija o korisniku**
    - Mogućnost promene **jezičkih preferencija**
    - Pregled **istorije razgovora i snimaka**
+6. Login
+7. Signup
