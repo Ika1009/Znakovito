@@ -5,6 +5,7 @@ document.getElementById("textInputButton").addEventListener("click", function() 
     if (textInput && textInput.value.trim() !== "") {
         displaySignLanguage(textInput.value);
     }
+    textInput.textContent = "";
 });
 
 // Function to handle audio file
@@ -112,6 +113,7 @@ function displaySignLanguage(text) {
         space.height = 5;
         container.appendChild(space);
     });
+
 }
 
 function clearSignLanguage() {
