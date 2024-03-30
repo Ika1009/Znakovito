@@ -10,17 +10,18 @@ document.getElementById("textInputButton").addEventListener("click", function() 
     }
 });
 
-function clearSignLanguage() {
-    const container = document.getElementById('sign-language-container');
-    container.innerHTML = ''; // Clear the container content
-}
-
-const handleAudioFile = (input) => {
+// Function to handle audio file
+const handleAudioFile = async (input) => {
+    clearSignLanguage();
     const file = input.files[0];
     if (file) {
         console.log("Selected audio file:", file.name);
+        const text = await sendAudioToGoogleCloud(file);
+        console.log("Text from uplaoded file is: " + text);
+        displaySignLanguage(text);
     }
 };
+
 
 const startListening = () => {
     let recognition;
@@ -48,6 +49,33 @@ const startListening = () => {
     };
 
     recognition.start();
+};
+
+// Function to send audio file to Google Cloud Speech-to-Text API
+const sendAudioToGoogleCloud = async (file) => {
+    const data = new FormData();
+    data.append('file', file);
+
+    const response = await fetch('https://speech.googleapis.com/v1/speech:recognize', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA',
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify({
+            config: {
+                encoding: 'LINEAR16',
+                sampleRateHertz: 16000,
+                languageCode: 'en-US',
+            },
+            audio: {
+                content: data
+            }
+        })
+    });
+
+    const result = await response.json();
+    return result;
 };
 
 function displaySignLanguage(text) {
@@ -79,3 +107,8 @@ function displaySignLanguage(text) {
         container.appendChild(space);
     });
 }
+
+function clearSignLanguage() {
+    const container = document.getElementById('sign-language-container');
+    container.innerHTML = ''; // Clear the container content
+ }
