@@ -101,11 +101,12 @@ function clearSignLanguage() {
     const container = document.getElementById('sign-language-container');
     container.innerHTML = ''; // Clear the container content
 }
-
+let selectedLanguageCurrent = "sr";
 const selectLanguage = (langCode) => {
     const selectedLanguage = document.getElementById("selectedLanguage");
     switch(langCode) {
       case 'en':
+        selectedLanguageCurrent = "en";    
         selectedLanguage.textContent = "English";
         inputFileText.textContent = "Input File";
         uploadFileText.textContent = "Upload or drag & drop your file.";
@@ -113,6 +114,7 @@ const selectLanguage = (langCode) => {
         textInputButton.textContent = "Submit";
         break;
       case 'fr':
+        selectedLanguageCurrent = "fr";
         selectedLanguage.textContent = "Francuski";
         inputFileText.textContent = "Fichier d'entrée";
         uploadFileText.textContent = "Téléchargez ou glissez-déposez votre fichier.";
@@ -120,6 +122,7 @@ const selectLanguage = (langCode) => {
         textInputButton.textContent = "Soumettre";
         break;
       case 'sr':
+        selectedLanguageCurrent = "sr";    
         selectedLanguage.textContent = "Srpski";
         inputFileText.textContent = "Улазни документ";
         uploadFileText.textContent = "Отпремите или превуците и отпустите своју датотеку";
@@ -127,6 +130,7 @@ const selectLanguage = (langCode) => {
         textInputButton.textContent = "Потврди";
         break;
       case 'de':
+        selectedLanguageCurrent = "de";
         selectedLanguage.textContent = "Nemački";
         inputFileText.textContent = "Eingabedatei";
         uploadFileText.textContent = "Laden Sie Ihre Datei hoch oder ziehen Sie sie per Drag & Drop";
@@ -134,6 +138,7 @@ const selectLanguage = (langCode) => {
         textInputButton.textContent = "Einreichen";
         break;
       case 'it':
+        selectedLanguageCurrent = "it";    
         selectedLanguage.textContent = "Italijanski";
         inputFileText.textContent = "File di input";
         uploadFileText.textContent = "Carica o trascina e rilascia il tuo file";
@@ -141,6 +146,7 @@ const selectLanguage = (langCode) => {
         textInputButton.textContent = "Invia";
         break;
       case 'es':
+        selectedLanguageCurrent = "es";    
         selectedLanguage.textContent = "Španski";
         inputFileText.textContent = "Entrada de archivo";
         uploadFileText.textContent = "Sube o arrastra y suelta tu archivo";
