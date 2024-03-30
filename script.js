@@ -51,7 +51,7 @@ const sendAudioToGoogleCloud = async (file) => {
     const data = new FormData();
     data.append('file', file);
 
-    const apiKey = 'AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA'; // Replace with your actual API key
+    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
 
     console.log('API Key:', apiKey); // Log the API key
     console.log('Audio Data:', data.get('file')); // Log the audio data
@@ -78,9 +78,6 @@ const sendAudioToGoogleCloud = async (file) => {
 
     return result;
 };
-
-// Call the function with your audio file
-// Example: sendAudioToGoogleCloud(yourAudioFile);
 
 function displaySignLanguage(text) {
     // Clear previous images
