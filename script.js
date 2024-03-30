@@ -59,7 +59,7 @@ const sendAudioToGoogleCloud = async (file) => {
     const response = await fetch(`https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'audio/x-flac', // Update content type
+            'Content-Type': 'audio/wav', // Update content type
         },
         body: JSON.stringify({
             config: {
