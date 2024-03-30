@@ -1,4 +1,4 @@
-document.getElementById("textInput").addEventListener("input", function() {
+document.getElementById("textInputButton").addEventListener("input", function() {
     const textInput = document.getElementById("textInput");
     
     // Check if the input field is not null and has a value
