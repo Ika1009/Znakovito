@@ -47,16 +47,19 @@ const startListening = () => {
     recognition.start();
 };
 
-// Function to send audio file to Google Cloud Speech-to-Text API
 const sendAudioToGoogleCloud = async (file) => {
     const data = new FormData();
     data.append('file', file);
 
-    const response = await fetch('https://speech.googleapis.com/v1/speech:recognize', {
+    const apiKey = 'AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA'; // Replace with your actual API key
+
+    console.log('API Key:', apiKey); // Log the API key
+    console.log('Audio Data:', data.get('file')); // Log the audio data
+
+    const response = await fetch(`https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`, {
         method: 'POST',
         headers: {
-            'Authorization': 'Bearer AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA',
-            'Content-Type': 'application/json; charset=utf-8'
+            'Content-Type': 'multipart/form-data', // Update content type
         },
         body: JSON.stringify({
             config: {
@@ -65,14 +68,19 @@ const sendAudioToGoogleCloud = async (file) => {
                 languageCode: 'en-US',
             },
             audio: {
-                content: data
-            }
-        })
+                content: data.get('file'), // Ensure this points to the actual audio data
+            },
+        }),
     });
 
     const result = await response.json();
+    console.log('API Response:', result); // Log the response
+
     return result;
 };
+
+// Call the function with your audio file
+// Example: sendAudioToGoogleCloud(yourAudioFile);
 
 function displaySignLanguage(text) {
     // Clear previous images
