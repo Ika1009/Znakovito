@@ -40,45 +40,10 @@ const startListening = () => {
 const handleAudioFile = async (input) => {
     const file = input.files[0];
     if (file) {
-        console.log("Selected audio file:", file.name);
-        const text = await sendAudioToGoogleCloud(file);
-        console.log("Text from uploaded file is: " + text);
+        const text = "Zoki je najjaci";
         displaySignLanguage(text);
     }
 };
-
-const sendAudioToGoogleCloud = async (file) => {
-    const data = new FormData();
-    data.append('file', file);
-
-    const apiKey = 'AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA'; // Replace with your actual API key
-
-    console.log('API Key:', apiKey); // Log the API key
-    console.log('Audio Data:', data.get('file')); // Log the audio data
-
-    const response = await fetch(`https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'audio/wav', // Update content type
-        },
-        body: JSON.stringify({
-            config: {
-                encoding: 'LINEAR16',
-                sampleRateHertz: 16000,
-                languageCode: 'en-US',
-            },
-            audio: {
-                content: data.get('file'), // Ensure this points to the actual audio data
-            },
-        }),
-    });
-
-    const result = await response.json();
-    console.log('API Response:', result); // Log the response
-
-    return result;
-};
-
 
 function displaySignLanguage(text) {
     // Clear previous images
