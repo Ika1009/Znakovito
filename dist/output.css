@@ -689,6 +689,10 @@ html {
   justify-content: center;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
 .rounded-xl{
   border-radius: 0.75rem;
 }
@@ -732,6 +736,11 @@ html {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-background{
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 250 245 / var(--tw-bg-opacity));
 }
 
 .p-6{
