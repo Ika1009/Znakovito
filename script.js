@@ -1,14 +1,12 @@
-const splitTextIntoArray = () => {
-    const textInput = document.getElementById("textInput");
-    const text = textInput.value;
-    const charArray = text.split('');
-    return charArray;
-}
-
 document.getElementById("textInput").addEventListener("input", function() {
-    let charArray = splitTextIntoArray();
-    console.log(charArray);
+    const textInput = document.getElementById("textInput");
+    
+    // Check if the input field is not null and has a value
+    if (textInput && textInput.value.trim() !== "") {
+        displaySignLanguage(textInput.value);
+    }
 });
+
 
 const handleAudioFile = (input) => {
     const file = input.files[0];
@@ -34,8 +32,8 @@ const startListening = () => {
         const transcript = event.results[0][0].transcript;
         document.getElementById('transcription').textContent = transcript;
 
-        // You can use the transcribed text here as needed
-        processTranscription(transcript);
+        console.log('Transcribed text:', transcript);
+        displaySignLanguage(transcript);
     };
 
     recognition.onerror = (event) => {
@@ -45,7 +43,27 @@ const startListening = () => {
     recognition.start();
 };
 
-const processTranscription = (transcript) => {
-    // Do something with the transcribed text, e.g., send it to a server, perform a search, etc.
-    console.log('Transcribed text:', transcript);
-};
+function displaySignLanguage(text) {
+    // Assuming 'text' is the input text
+    const container = document.getElementById('sign-language-container');
+    
+    // Loop through each word in the input text
+    text.split(' ').forEach(word => {
+        // Loop through each letter in the word
+        for (let i = 0; i < word.length; i++) {
+            const letter = word[i].toLowerCase(); // Assuming your image filenames are lowercase
+            
+            // Create an image element
+            const img = document.createElement('img');
+            img.src = `./znakovi/${letter}.png`; // Assuming the images are stored in the 'znakovi' directory
+            img.alt = letter; // Set alt text for accessibility
+            
+            // Append the image to the container
+            container.appendChild(img);
+        }
+        
+        // Add a space between words
+        const space = document.createTextNode(' ');
+        container.appendChild(space);
+    });
+}
