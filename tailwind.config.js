@@ -2,7 +2,8 @@
 module.exports = {
   content: ["index.html"],
   theme: {
-    extend: {colors: {
+    extend: {
+      colors: {
       'text': '#070704',
       'background': '#fbfaf5',
       'primary': '#fbda03',
