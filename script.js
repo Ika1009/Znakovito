@@ -54,10 +54,12 @@ const sendAudioToGoogleCloud = async (file) => {
 
     const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
 
+    console.log('API Key:', apiKey); // Log the API key
+
     const response = await fetch(`https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json; charset=utf-8'
+            'Content-Type': 'multipart/form-data', // Update content type
         },
         body: JSON.stringify({
             config: {
@@ -66,15 +68,16 @@ const sendAudioToGoogleCloud = async (file) => {
                 languageCode: 'en-US',
             },
             audio: {
-                content: data
-            }
-        })
+                content: data,
+            },
+        }),
     });
 
     const result = await response.json();
+    console.log('API Response:', result); // Log the response
+
     return result;
 };
-
 
 function displaySignLanguage(text) {
     // Clear previous images
