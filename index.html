@@ -17,10 +17,11 @@
       <p class="mt-2 text-gray-500 tracking-wide">Upload or drag & drop your file. </p>
   
       <input id="dropzone-file" accept="audio/*" onchange="handleAudioFile(this)" type="file" class="hidden" />
-  </main>
+  </main> 
   <button onclick="startListening()">Start Listening</button>
   <p id="transcription"></p>
   <input id="textInput" type="text" placeholder="Type here" class="input input-bordered m-auto w-full max-w-xs" />
+  <div id="signlanguage-container"></div>
   <script src="script.js"></script>
 </body>
 </html>
