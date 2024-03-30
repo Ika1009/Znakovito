@@ -8,18 +8,6 @@ document.getElementById("textInputButton").addEventListener("click", function() 
     textInput.textContent = "";
 });
 
-// Function to handle audio file
-const handleAudioFile = async (input) => {
-    const file = input.files[0];
-    if (file) {
-        console.log("Selected audio file:", file.name);
-        const text = await sendAudioToGoogleCloud(file);
-        console.log("Text from uplaoded file is: " + text);
-        displaySignLanguage(text);
-    }
-};
-
-
 const startListening = () => {
     let recognition;
     if (window.webkitSpeechRecognition) {
@@ -48,6 +36,17 @@ const startListening = () => {
     recognition.start();
 };
 
+// Function to handle audio file
+const handleAudioFile = async (input) => {
+    const file = input.files[0];
+    if (file) {
+        console.log("Selected audio file:", file.name);
+        const text = await sendAudioToGoogleCloud(file);
+        console.log("Text from uploaded file is: " + text);
+        displaySignLanguage(text);
+    }
+};
+
 const sendAudioToGoogleCloud = async (file) => {
     const data = new FormData();
     data.append('file', file);
@@ -60,7 +59,7 @@ const sendAudioToGoogleCloud = async (file) => {
     const response = await fetch(`https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'multipart/form-data', // Update content type
+            'Content-Type': 'application/json', // Update content type
         },
         body: JSON.stringify({
             config: {
@@ -80,8 +79,6 @@ const sendAudioToGoogleCloud = async (file) => {
     return result;
 };
 
-// Call the function with your audio file
-// Example: sendAudioToGoogleCloud(yourAudioFile);
 
 function displaySignLanguage(text) {
     // Clear previous images
