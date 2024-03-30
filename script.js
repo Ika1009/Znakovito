@@ -59,7 +59,7 @@ const sendAudioToGoogleCloud = async (file) => {
     const response = await fetch('https://speech.googleapis.com/v1/speech:recognize', {
         method: 'POST',
         headers: {
-            'Authorization': 'Bearer YOUR_GOOGLE_CLOUD_API_KEY',
+            'Authorization': 'Bearer AIzaSyCvDbd7UXx5qBbvZXw3r9KH5Kr6zs-gOsA',
             'Content-Type': 'application/json; charset=utf-8'
         },
         body: JSON.stringify({
