@@ -106,4 +106,31 @@ function displaySignLanguage(text) {
 function clearSignLanguage() {
     const container = document.getElementById('sign-language-container');
     container.innerHTML = ''; // Clear the container content
- }
+}
+
+const selectLanguage = (langCode) => {
+    const selectedLanguage = document.getElementById("selectedLanguage");
+    switch(langCode) {
+      case 'en':
+        selectedLanguage.textContent = "English";
+        break;
+      case 'fr':
+        selectedLanguage.textContent = "French";
+        break;
+      // Add cases for more languages as needed
+      default:
+        selectedLanguage.textContent = "Select Language";
+    }
+    closeDropdown();
+  };
+  
+  const closeDropdown = () => {
+    const languageOptions = document.getElementById("languageOptions");
+    languageOptions.classList.remove("block");
+    languageOptions.classList.add("hidden");
+  };
+  
+  document.getElementById("languageButton").addEventListener("click", () => {
+    const languageOptions = document.getElementById("languageOptions");
+    languageOptions.classList.toggle("hidden");
+});  
