@@ -63,8 +63,9 @@ function displaySignLanguage(text) {
     // Function to check and replace love phrases
     const replaceLovePhrases = (input) => {
         const lovePhrases = {
-            'sr': ['volim te', 'ljubim te', 'volem te', 'volim vas', 'ljubim vas', 'volem vas'],
-            'en': ['i love you', 'love you', 'luv ya', 'luv u', 'love ya', 'love u']
+            'sr': ['volim te', 'ja te volim', 'ljubim te', 'volem te', 'volim vas', 'ljubim vas', 'volem vas'],
+            'en': ['i love you', 'love you', 'luv ya', 'luv u', 'love ya', 'love u'],
+            'es': ['te quiero', 'te amo', 'amor', 'quiero mucho', 'me gustas']
         };
         let replacedInput = input;
         for (const lang in lovePhrases) {
