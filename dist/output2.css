@@ -1322,6 +1322,11 @@ html {
   border-color: transparent;
 }
 
+.border-gray-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .bg-background{
   --tw-bg-opacity: 1;
   background-color: rgb(251 250 245 / var(--tw-bg-opacity));
@@ -1422,6 +1427,10 @@ html {
 
 .p-8{
   padding: 2rem;
+}
+
+.p-2\.5{
+  padding: 0.625rem;
 }
 
 .px-2{
@@ -1964,6 +1973,11 @@ html {
   border-color: rgb(251 218 3 / var(--tw-border-opacity));
 }
 
+.focus\:border-blue-500:focus{
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+
 .focus\:bg-background:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(251 250 245 / var(--tw-bg-opacity));
@@ -2009,6 +2023,11 @@ html {
 .focus\:ring-yellow-500:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(234 179 8 / var(--tw-ring-opacity));
+}
+
+.focus\:ring-blue-500:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-offset-2:focus{
@@ -2372,6 +2391,11 @@ html {
     border-color: rgb(255 255 255 / 0.05);
   }
 
+  .dark\:border-gray-600{
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+
   .dark\:bg-gray-800{
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -2388,6 +2412,11 @@ html {
 
   .dark\:bg-white\/5{
     background-color: rgb(255 255 255 / 0.05);
+  }
+
+  .dark\:bg-gray-700{
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
   .dark\:from-yellow-400{
@@ -2413,6 +2442,16 @@ html {
   .dark\:text-white{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .dark\:placeholder-gray-400::-moz-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  .dark\:placeholder-gray-400::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
   .dark\:ring-\[--card-dark-bg\]{
@@ -2450,8 +2489,18 @@ html {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
+  .dark\:focus\:border-blue-500:focus{
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity));
+  }
+
   .dark\:focus\:ring-gray-600:focus{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
+  }
+
+  .dark\:focus\:ring-blue-500:focus{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
   }
 }
