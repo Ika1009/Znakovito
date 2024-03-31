@@ -91,7 +91,6 @@ function displayQuestion() {
         img.addEventListener("click", () => checkAnswer(option, correctOption.text));
         console.log("Slika " + img.src + " option " + option);
     });
-    currentQuestionIndex++;
 }
 
 function checkAnswer(option, correctSrc) {
@@ -110,6 +109,7 @@ function checkAnswer(option, correctSrc) {
         icon.classList.add("hidden");
         console.log("Correct");
         score++;
+        currentQuestionIndex++;
     } else {
         resultText.textContent = "Incorrect!";
         helpText.textContent = "The correct answer was: ";
