@@ -84,9 +84,8 @@ function displayQuestion() {
 
     const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
-    let imgCounter = 1;
     currentQuestion.options.forEach((option, index) => {
-        const img = document.getElementById(imgCounter);
+        const img = document.getElementById(index + 1);
         img.src = option.text;
     
         //const grandparent = img.parentElement.parentElement;
@@ -94,8 +93,7 @@ function displayQuestion() {
         //img.parentElement.replaceChild(newGrandparent, grandparent);
         //newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
         img.addEventListener("click", () => checkAnswer(option));
-        
-        imgCounter++;
+        console.log("Slika " + img.src + " option " + option);
     });
     currentQuestionIndex++;
 }
@@ -119,7 +117,7 @@ function checkAnswer(option) {
     } else {
         resultText.textContent = "Incorrect!";
         helpText.textContent = "The correct answer was: ";
-        popup.getElementById("popupImage").src = option.text;
+        document.getElementById("popupImage").src = option.text;
         iicon.classList.add("bg-red-100");
         check.classList.add("hidden");
         console.log("Incorrect");
