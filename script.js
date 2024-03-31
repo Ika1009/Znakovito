@@ -113,8 +113,8 @@ function displaySignLanguage(text) {
         // Loop through each letter in the word
         for (let i = 0; i < word.length; i++) {
             let letter = word[i].toLowerCase();
-            // Check if the character is from Cyrillic script and the language selected is Serbian
-            if (selectedLanguageCurrent === 'sr' && /[\u0400-\u04FF]/.test(letter)) {
+            // Check if the character is from Cyrillic script
+            if (/[\u0400-\u04FF]/.test(letter)) {
                 letter = convertToLatin(letter);
             }
             // Check for combinations 'lj', 'nj', 'dž', and 'đ' only if the language selected is Serbian
@@ -130,6 +130,8 @@ function displaySignLanguage(text) {
                     letter = 'đ';
                     i++;
                 }
+                // Dodati sr ako je srpski zbog duplo rucnog znakovnog pokazivanja
+                letter = letter + '_sr';
             }
             showImage(letter);
         }
