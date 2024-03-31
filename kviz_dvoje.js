@@ -55,41 +55,36 @@ const quizQuestionsNaSrpskom = [
         ]
     }
 ];
-
 let scores = [0, 0];
 let currentQuestionIndex = 0;
 let currentPlayer = 0;
 
-// Add player usernames
 let playerUsernames = ["Player 1 Username", "Player 2 Username"];
 
 function displayQuestion() {
-    if(currentQuestionIndex == 6) // Quiz finished
-    {
+    if (currentQuestionIndex >= quizQuestionsNaSrpskom.length) {
         document.getElementById("popupTitle").textContent = "Quiz Finished - " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
         document.getElementById("popupDesc").textContent = "The game has ended.";
         popup.classList.remove("hidden");
         const confirmButton = document.getElementById('confirm-button');
-            confirmButton.addEventListener('click', function() {
+        confirmButton.addEventListener('click', function() {
             popup.classList.add("hidden");
-            windows.location.href = "./index.html";
+            window.location.href = "https://bonanza.rs/fon/landing.html";
         });
+        return;
     }
-    
-    const questionContainer = document.getElementById("question");
-    const optionsContainer = document.getElementById("options");
 
+    const questionContainer = document.getElementById("question");
     const currentQuestion = quizQuestionsNaSrpskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
+
     let imgCounter = 1;
     currentQuestion.options.forEach((option, index) => {
         const img = document.getElementById(imgCounter);
         img.src = option.text;
         img.addEventListener("click", () => checkAnswer(option));
-        
         imgCounter++;
     });
-    currentQuestionIndex++;
 }
 
 function checkAnswer(option) {
@@ -112,27 +107,25 @@ function checkAnswer(option) {
         scores[currentPlayer]--;
         resultText.textContent = playerUsernames[currentPlayer] + " Incorrect! - " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
         helpText.textContent = "The correct answer was: ";
-        popup.getElementById("popupImage").src = option.text;
+        document.getElementById("popupImage").src = option.text; // Corrected this line
         iicon.classList.add("bg-red-100");
         icon.classList.add("text-red-600");
         console.log("Incorrect");
     }
 
-    // Show the modal with the result
     popup.classList.remove("hidden");
 
-    // Hide the modal and display the next question when the user confirms
     const confirmButton = document.getElementById('confirm-button');
     confirmButton.addEventListener('click', function() {
         popup.classList.add("hidden");
         if (isCorrect) {
-            currentPlayer = (currentPlayer + 1) % 2; // Switch player
+            currentPlayer = (currentPlayer + 1) % 2;
             displayQuestion();
+            currentQuestionIndex++;
         }
     });
 }
 
 const popup = document.getElementById('info-popup');
 
-// Call displayQuestion() to start the quiz
 displayQuestion();
