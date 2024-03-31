@@ -88,7 +88,7 @@ function displayQuestion() {
         const img = document.getElementById(index + 1);
         img.src = option.text;
         const correctOption = currentQuestion.options.find(option => option.isCorrect);
-        img.addEventListener("click", () => checkAnswer(option, option.text));
+        img.addEventListener("click", () => checkAnswer(option, correctOption.text));
         console.log("Slika " + img.src + " option " + option);
     });
     currentQuestionIndex++;
