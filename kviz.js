@@ -117,50 +117,26 @@ const quizQuestionsNaEngleskom = [
 
 let currentQuestionIndex = 0;
 
-function displayQuestion() {
-    console.log("Inside displayQuestion function");
-
+displayQuestion() {
     const questionContainer = document.getElementById("question");
-    console.log("questionContainer:", questionContainer);
-
     const optionsContainer = document.getElementById("options");
-    console.log("optionsContainer:", optionsContainer);
 
     const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
-    console.log("currentQuestion:", currentQuestion);
-
     questionContainer.textContent = currentQuestion.question;
-    console.log("Question set:", currentQuestion.question);
-
     let imgCounter = 1;
-
     currentQuestion.options.forEach((option, index) => {
-        console.log("Inside forEach loop for options");
-        
         const img = document.getElementById(imgCounter);
-        console.log("img:", img);
-
         img.src = option.text;
-        console.log("Image source set:", option.text);
-
+    
         const grandparent = img.parentElement.parentElement;
-        console.log("grandparent:", grandparent);
-
         const newGrandparent = grandparent.cloneNode(true);
-        console.log("newGrandparent:", newGrandparent);
-
         img.parentElement.replaceChild(newGrandparent, grandparent);
-        console.log("Parent replaced with new clone");
-
         newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
-        console.log("Event listener added for option:", option.isCorrect);
-
+        
         imgCounter++;
     });
 
-    console.log("Exiting displayQuestion function");
 }
-
 
 function checkAnswer(isCorrect) {
     console.log("Check answer")
