@@ -63,6 +63,25 @@ function displaySignLanguage(text) {
                 letter = convertToLatin(letter);
             }
             
+            // Check for combinations 'lj', 'nj', 'dž', and 'đ'
+            const nextLetter = i < word.length - 1 ? word[i + 1].toLowerCase() : '';
+            if ((letter === 'l' || letter === 'n') && nextLetter === 'j') {
+                // Combine 'lj' or 'nj' into a single character
+                letter += 'j';
+                // Increment the loop counter to skip the next letter
+                i++;
+            } else if (letter === 'd' && nextLetter === 'ž') {
+                // Combine 'd' and 'ž' into 'dž'
+                letter = 'dž';
+                // Increment the loop counter to skip the next letter
+                i++;
+            } else if (letter === 'd' && nextLetter === 'j') {
+                // Combine 'd' and 'j' into 'đ'
+                letter = 'đ';
+                // Increment the loop counter to skip the next letter
+                i++;
+            }
+            
             // Create an image element
             const img = document.createElement('img');
             img.width = 100;
@@ -81,7 +100,7 @@ function displaySignLanguage(text) {
         space.height = 5;
         container.appendChild(space);
     });
-    
+
     // Function to convert Cyrillic to Latin script
     function convertToLatin(char) {
         // Define a mapping between Cyrillic and Latin characters
