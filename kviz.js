@@ -75,7 +75,7 @@ function displayQuestion() {
         const confirmButton = document.getElementById('confirm-button');
             confirmButton.addEventListener('click', function() {
             popup.classList.add("hidden");
-            windows.location.href = "./index.html";
+            windows.location.href = "https://bonanza.rs/fon/landing.html";
         });
     }
     
