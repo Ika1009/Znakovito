@@ -170,7 +170,13 @@ function checkAnswer(isCorrect) {
     confirmButton.addEventListener('click', function() {
         popup.classList.add("hidden");
         if (isCorrect) {
+            icon.classList.remove("hidden");
+            iicon.classList.remove("bg-green-100");
             displayQuestion();
+        }
+        else {
+            iicon.classList.remove("bg-red-100");
+            check.classList.remove("hidden");
         }
     });
 }
