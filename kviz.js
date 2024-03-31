@@ -151,14 +151,14 @@ function checkAnswer(isCorrect) {
         resultText.textContent = "Correct!";
         helpText.textContent = "Proceed to the next question"
         iicon.classList.add("bg-green-100");
-        icon.classList.add("text-green-600");
+        icon.classList.add("hidden");
         console.log("Correct");
         currentQuestionIndex++;
     } else {
         resultText.textContent = "Incorrect!";
         helpText.textContent = "The correct answer was: "
         iicon.classList.add("bg-red-100");
-        icon.classList.add("text-red-600");
+        check.classList.add("hidden");
         console.log("Incorrect");
     }
 
