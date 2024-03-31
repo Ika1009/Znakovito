@@ -87,13 +87,14 @@ function displaySignLanguage(text) {
             'en': ['mother', 'friend', 'hello']
         };
         const specialWords = specialWordsMapping[selectedLanguageCurrent] || [];
-        const specialWord = specialWords.includes(word.toLowerCase()) ? word.toLowerCase() : '';
+        const specialWord = specialWords.find(special => word.toLowerCase().includes(special)) || '';
         if (specialWord && specialWord !== '') {
             showImage(specialWord);
             return true; // Indicate that a special word was found
         }
         return false; // Indicate that no special word was found
     };
+
 
     // Replace love phrases with 'ily'
     text = replaceLovePhrases(text);
