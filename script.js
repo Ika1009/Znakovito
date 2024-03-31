@@ -53,45 +53,50 @@ function displaySignLanguage(text) {
         
     // Loop through each word in the input text
     text.split(' ').forEach(word => {
+        // Check if the current word is a special word based on the selected language
+        let specialWord = '';
+        if (languageSelectedCurrent === 'sr') {
+            specialWord = ['majk', 'prijatelj', 'zdravo'].includes(word.toLowerCase()) ? word.toLowerCase() : '';
+        } else if (languageSelectedCurrent === 'es') {
+            specialWord = ['madre', 'amigo', 'hola'].includes(word.toLowerCase()) ? word.toLowerCase() : '';
+        } else if (languageSelectedCurrent === 'en') {
+            specialWord = ['mother', 'friend', 'hello'].includes(word.toLowerCase()) ? word.toLowerCase() : '';
+        }
+        if(specialWord && specialWord !== '') {
+            showImage(specialWord);
+        }
+        
         // Loop through each letter in the word
         for (let i = 0; i < word.length; i++) {
             let letter = word[i].toLowerCase(); // Assuming your image filenames are lowercase
             
-            // Check if the character is from Cyrillic script
-            if (/[\u0400-\u04FF]/.test(letter)) { // Range for Cyrillic characters
+            // Check if the character is from Cyrillic script and the language selected is Serbian
+            if (languageSelectedCurrent === 'sr' && /[\u0400-\u04FF]/.test(letter)) { // Range for Cyrillic characters
                 // Convert Cyrillic to Latin script if applicable
                 letter = convertToLatin(letter);
             }
             
-            // Check for combinations 'lj', 'nj', 'dž', and 'đ'
-            const nextLetter = i < word.length - 1 ? word[i + 1].toLowerCase() : '';
-            if ((letter === 'l' || letter === 'n') && nextLetter === 'j') {
-                // Combine 'lj' or 'nj' into a single character
-                letter += 'j';
-                // Increment the loop counter to skip the next letter
-                i++;
-            } else if (letter === 'd' && nextLetter === 'ž') {
-                // Combine 'd' and 'ž' into 'dž'
-                letter = 'dž';
-                // Increment the loop counter to skip the next letter
-                i++;
-            } else if (letter === 'd' && nextLetter === 'j') {
-                // Combine 'd' and 'j' into 'đ'
-                letter = 'đ';
-                // Increment the loop counter to skip the next letter
-                i++;
+            // Check for combinations 'lj', 'nj', 'dž', and 'đ' only if the language selected is Serbian
+            if (languageSelectedCurrent === 'sr') {
+                const nextLetter = i < word.length - 1 ? word[i + 1].toLowerCase() : '';
+                if ((letter === 'l' || letter === 'n') && nextLetter === 'j') {
+                    // Combine 'lj' or 'nj' into a single character
+                    letter += 'j';
+                    // Increment the loop counter to skip the next letter
+                    i++;
+                } else if (letter === 'd' && nextLetter === 'ž') {
+                    // Combine 'd' and 'ž' into 'dž'
+                    letter = 'dž';
+                    // Increment the loop counter to skip the next letter
+                    i++;
+                } else if (letter === 'd' && nextLetter === 'j') {
+                    // Combine 'd' and 'j' into 'đ'
+                    letter = 'đ';
+                    // Increment the loop counter to skip the next letter
+                    i++;
+                }
             }
-            
-            // Create an image element
-            const img = document.createElement('img');
-            img.width = 100;
-            img.height = 100;
-            // img.style.objectFit = "contain";
-            img.src = `./znakovi/${letter}.png`; // Assuming the images are stored in the 'znakovi' directory
-            img.alt = letter; // Set alt text for accessibility
-            
-            // Append the image to the container
-            container.appendChild(img);
+            showImage(letter);
         }
         
         // Add a space between words
@@ -100,6 +105,19 @@ function displaySignLanguage(text) {
         space.height = 5;
         container.appendChild(space);
     });
+
+    function showImage(letter){       
+        // Create an image element
+        const img = document.createElement('img');
+        img.width = 100;
+        img.height = 100;
+        // img.style.objectFit = "contain";
+        img.src = `./znakovi/${letter}.png`; // Assuming the images are stored in the 'znakovi' directory
+        img.alt = letter; // Set alt text for accessibility 
+                    // Append the image to the container
+        container.appendChild(img);
+    }
+        
 
     // Function to convert Cyrillic to Latin script
     function convertToLatin(char) {
