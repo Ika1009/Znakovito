@@ -140,7 +140,7 @@ function displayQuestion() {
 
 function checkAnswer(isCorrect) {
     console.log("Check answer")
-    const resultText = document.getElementById("result-text"); // Assuming you have a result-text element in your modal
+    const resultText = document.getElementById("popupDescription"); // Assuming you have a result-text element in your modal
     const acceptPrivacyEl = document.getElementById('confirm-button');
 
     if (isCorrect) {
