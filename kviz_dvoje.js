@@ -1,3 +1,62 @@
+// Create an array of quiz questions
+// Create an array of quiz questions
+const quizQuestionsNaSrpskom = [
+    {
+        question: "Koji znak predstavlja slovo Y u Američkom Znakovnom Jeziku?",
+        options: [
+            { text: "https://bonanza.rs/fon/znakovi/c.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/y.png", isCorrect: true },
+            { text: "https://bonanza.rs/fon/znakovi/u.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/d.png", isCorrect: false }
+        ]
+    },
+    {
+        question: "Koji znak predstavlja slovo A u Američkom Znakovnom Jeziku?",
+        options: [
+            { text: "https://bonanza.rs/fon/znakovi/o.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/h.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/a.png", isCorrect: true },
+            { text: "https://bonanza.rs/fon/znakovi/s.png", isCorrect: false }
+        ]
+    },
+    {
+        question: "Koji od ovih znakova predstavlja Ljubav?",
+        options: [
+            { text: "https://bonanza.rs/fon/znakovi/ily.png", isCorrect: true },
+            { text: "https://bonanza.rs/fon/znakovi/majk.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/y.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/zdravo.png", isCorrect: false }
+        ]
+    },
+    {
+        question: "Koji znak predstavlja slovo N u Američkom Znakovnom Jeziku?",
+        options: [
+            { text: "https://bonanza.rs/fon/znakovi/j.png", isCorrect: true },
+            { text: "https://bonanza.rs/fon/znakovi/g.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/r.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/n.png", isCorrect: true }
+        ]
+    },    
+    {
+        question: "Koji znak predstavlja slovo T u Američkom Znakovnom Jeziku?",
+        options: [
+            { text: "https://bonanza.rs/fon/znakovi/u.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/b.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/z.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/t.png", isCorrect: true }
+        ]
+    },
+    {
+        question: "Koji znak predstavlja slovo W u Američkom Znakovnom Jeziku?",
+        options: [
+            { text: "https://bonanza.rs/fon/znakovi/q.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/g.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/w.png", isCorrect: true },
+            { text: "https://bonanza.rs/fon/znakovi/x.png", isCorrect: false }
+        ]
+    }
+];
+
 let scores = [0, 0];
 let currentQuestionIndex = 0;
 let currentPlayer = 0;
