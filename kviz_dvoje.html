@@ -11,7 +11,21 @@
     <section
       class="items-center align-center flex h-screen w-screen bg-primary"
       style="background-image: url(./resursi/kvizbg.svg)"
-    ><div class="-mt-3 text-center space-y-8 sm:mt-5">
+    >    <div class="fixed z-10 inset-0 overflow-y-auto" id="my-modal">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+              <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+          <div class="inline-block align-bottom bg-background rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl text-center transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+              role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+              <div>
+                  <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                      <path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25 11 A 3 3 0 0 0 22 14 A 3 3 0 0 0 25 17 A 3 3 0 0 0 28 14 A 3 3 0 0 0 25 11 z M 21 21 L 21 23 L 22 23 L 23 23 L 23 36 L 22 36 L 21 36 L 21 38 L 22 38 L 23 38 L 27 38 L 28 38 L 29 38 L 29 36 L 28 36 L 27 36 L 27 21 L 26 21 L 22 21 L 21 21 z"></path>
+                      </svg>
+                  </div>
+                  <div class="-mt-3 text-center space-y-8 sm:mt-5">
                       <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
                           Before we start
                       </h3>
@@ -86,11 +100,21 @@
                       </button>
                       </div>
                       <div class="mb-6">
-                        <label for="default-input" class="block text-start mb-2 text-sm font-medium text-gray-900 dark:text-white">Your UserName</label>
+                        <label for="default-input" class="block text-start mb-2 text-sm font-medium text-gray-900 dark:text-white">Your username</label>
                         <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
                   </div>
               </div>
+              <div class="mt-5 sm:mt-6">
+                  <button
+                      class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white sm:text-sm"
+                      onclick="closeModal()">
+                      OK
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
       <div class=" sm:w-7/12 text-center border border-primary align-middle justify-center w-full h-full sm:h-2/3 p-4 bg-background shadow-md rounded-md m-auto">
         <img src="./resursi/venac.png" width="150" class="mx-auto z-10 -mt-12"  height="150"/>
         <div class="w-1/2 h-1/3 mt-8 mb-4 mx-auto">
