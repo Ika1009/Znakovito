@@ -128,3 +128,16 @@ quizQuestions.forEach((question, index) => {
         console.log(`Option ${optionIndex + 1}: ${option.text} (Correct: ${option.isCorrect})`);
     });
 });
+
+const modalEl = document.getElementById('info-popup');
+const privacyModal = new Modal(modalEl, {
+    placement: 'center'
+});
+
+privacyModal.show();
+
+const acceptPrivacyEl = document.getElementById('confirm-button');
+acceptPrivacyEl.addEventListener('click', function() {
+    alert('privacy accepted');
+    privacyModal.hide();
+});
