@@ -50,11 +50,32 @@ function displaySignLanguage(text) {
     clearSignLanguage();
     // Assuming 'text' is the input text
     const container = document.getElementById('sign-language-container');
+    text = replaceLovePhrases(text);
+
+    // Map English special words to their Serbian equivalents
+    const specialWordsMapping = {
+        'mother': 'majk',
+        'madre': 'majk',
+        'friend': 'prijatelj',
+        'amigo': 'prijatelj',
+        'hello': 'zdravo',
+        'halo': 'zdravo',
+        'thank you': 'hvala',
+        'please': 'molim',
+    };
         
     // Loop through each word in the input text
     text.split(' ').forEach(word => {
+        if(word == "ily")
+        {
+            showImage("ily");
+            continue;
+        }
+        
+        
         // Check if the current word is a special word based on the selected language
         let specialWord = '';
+        
         if (languageSelectedCurrent === 'sr') {
             specialWord = ['majk', 'prijatelj', 'zdravo'].includes(word.toLowerCase()) ? word.toLowerCase() : '';
         } else if (languageSelectedCurrent === 'es') {
@@ -117,7 +138,25 @@ function displaySignLanguage(text) {
                     // Append the image to the container
         container.appendChild(img);
     }
-        
+
+    const lovePhrases = {
+        'sr': ['volim te', 'ljubim te', 'volem te', 'volim vas', 'ljubim vas', 'volem vas'],
+        'en': ['i love you', 'love you', 'luv ya', 'luv u', 'love ya', 'love u']
+    };
+    
+    const replaceLovePhrases = (input) => {
+        let replacedInput = input;
+        for (const lang in lovePhrases) {
+            if (lovePhrases.hasOwnProperty(lang)) {
+                lovePhrases[lang].forEach(phrase => {
+                    if (input.toLowerCase().includes(phrase)) {
+                        replacedInput = replacedInput.replace(new RegExp(phrase, 'gi'), 'ily');
+                    }
+                });
+            }
+        }
+        return replacedInput;
+    };
 
     // Function to convert Cyrillic to Latin script
     function convertToLatin(char) {
