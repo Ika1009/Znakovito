@@ -141,15 +141,24 @@ function displayQuestion() {
 
 function checkAnswer(isCorrect) {
     console.log("Check answer")
-    const resultText = document.getElementById("popupDescription"); // Assuming you have a result-text element in your modal
+    const icon = document.getElementById("icon");
+    const iicon = document.getElementById("iicon");
+    const resultText = document.getElementById("popupTitle"); // Assuming you have a result-text element in your modal
+    const helpText = document.getElementById("popupDesc");
     const acceptPrivacyEl = document.getElementById('confirm-button');
 
     if (isCorrect) {
         resultText.textContent = "Correct!";
+        helpText.textContent = "Proceed to the next question"
+        iicon.classList.add("bg-green-100");
+        icon.classList.add("text-green-600");
         console.log("Correct");
         currentQuestionIndex++;
     } else {
         resultText.textContent = "Incorrect!";
+        helpText.textContent = "The correct answer was: "
+        iicon.classList.add("bg-red-100");
+        icon.classList.add("text-red-600");
         console.log("Incorrect");
     }
 
