@@ -22,41 +22,41 @@
       </a>
       <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
           <button id="languageButton" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-            <img class="h-5 w-5 rounded-full me-2" src="resursi/serbia-flag-icon.svg" alt="Zastava Srbije">
+            <img id="zastava" class="h-5 w-5 rounded-full me-2" src="resursi/serbia-flag-icon.svg" alt="Zastava Srbije">
             Srpski
           </button>
           <!-- Dropdown -->
           <div class="z-50 hidden my-4 absolute top-10 text-base list-none divide-y divide-gray-100 rounded-lg shadow" id="languageOptions">
             <ul class="py-2 font-medium" role="none">
               <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                <a href="#" onclick="selectLanguage('en')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
                   <div class="inline-flex items-center">
                     <svg aria-hidden="true" class="h-5 w-5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
-                    English (US)
+                    Engleski (US)
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                <a href="#" onclick="selectLanguage('de')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
                   <div class="inline-flex items-center">
                     <svg class="h-5 w-5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
-                    Deutsch
+                    Nemački
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                <a href="#" onclick="selectLanguage('it')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
                   <div class="inline-flex items-center">
                     <svg class="h-5 w-5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
-                    Italiano
+                    Italijanski
                   </div>
                 </a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                <a href="#" onclick="selectLanguage('es')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
                   <div class="inline-flex items-center">
                     <svg class="h-5 w-5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
-                    中文 (繁體)
+                    Španski
                   </div>
                 </a>
               </li>
@@ -72,13 +72,13 @@
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
         <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
           <li>
-            <a href="#" class="relative inline cursor-pointer text-xl font-medium before:bg-text  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100" aria-current="page">Vežba</a>
+            <a id="heder1" href="#" class="relative inline cursor-pointer text-xl font-medium before:bg-text  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100" aria-current="page">Vežba</a>
           </li>
           <li>
-            <a href="kviz.html" class="relative inline cursor-pointer text-xl font-medium before:bg-text  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">Kviz</a>
+            <a id="heder2" href="kviz.html" class="relative inline cursor-pointer text-xl font-medium before:bg-text  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">Kviz</a>
           </li>
           <li>
-            <a href="prevod.html" class="relative inline cursor-pointer text-xl font-medium before:bg-text  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">Prevod</a>
+            <a id="heder3" href="prevod.html" class="relative inline cursor-pointer text-xl font-medium before:bg-text  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">Prevod</a>
           </li>
         </ul>
       </div>
@@ -89,16 +89,16 @@
           <div class="pt-16 flex flex-wrap items-center justify-center">
             <div class="w-full px-4 lg:w-5/12">
               <div class="hero-content text-center">
-                <h1 class="mb-8 -mt-16 text-4xl font-bold !leading-[1.208] text-text sm:text-[42px] lg:text-[40px] xl:text-5xl">
+                <h1 id="tekst1" class="mb-8 -mt-16 text-4xl font-bold !leading-[1.208] text-text sm:text-[42px] lg:text-[40px] xl:text-5xl">
                   Tvoj vodič kroz svetske <br />
                   znakovne jezike!
                 </h1>
-                <p class="mb-8 text-md text-center justify-center text-gray-800">
+                <p id="tekst2" class="mb-8 text-md text-center justify-center text-gray-800">
                   Različite zemlje, različiti znakovni jezici. Sa Znakovito, prevaziđi jezičke barijere i nauči znakovni jezik iz bilo koje zemlje.
                 </p>
                 <ul class="flex flex-wrap items-center justify-center">
                   <li>
-                    <a href="javascript:void(0)" class="inline-flex hover:shadow-2xl items-center justify-center rounded-md bg-text px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-dark lg:px-7">
+                    <a id="tekst3" href="javascript:void(0)" class="inline-flex hover:shadow-2xl items-center justify-center rounded-md bg-text px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-dark lg:px-7">
                       Započni
                     </a>
                   </li>
@@ -129,16 +129,16 @@
                   <div class="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                       <div>
                           <div class="mt-20 text-center relative z-10 space-y-2">
-                              <h2 class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Gluvonemih osoba</h2>
-                              <p class="dark:text-gray-300 text-gray-700">stupa u brak sa drugom gluvonemom osobom</p>
+                              <h2 id="tekst4" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Gluvonemih osoba</h2>
+                              <p id="tekst5" class="dark:text-gray-300 text-gray-700">stupa u brak sa drugom gluvonemom osobom</p>
                           </div>
                       </div>
                   </div>
                   <div class="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                       <div>
                           <div class="mt-14 text-center relative z-10 space-y-2">
-                              <h2 class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Audio i tekst prevod</h2>
-                              <p class="dark:text-gray-300 text-gray-700">Bez obzira da li koristiš glasovne poruke, tekstualni unos ili audio fajlove, Znakovito nudi precizan prevod u znakovni jezik - prilagođen različitim lokalnim dijalektima.</p>
+                              <h2 id="tekst6" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Audio i tekst prevod</h2>
+                              <p id="tekst7" class="dark:text-gray-300 text-gray-700">Bez obzira da li koristiš glasovne poruke, tekstualni unos ili audio fajlove, Znakovito nudi precizan prevod u znakovni jezik - prilagođen različitim lokalnim dijalektima.</p>
                           </div>
                       </div>
                   </div>
@@ -151,8 +151,8 @@
                                   </svg>
                                   </div>
                               <div class="space-y-2">
-                                  <h2 class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Kviz za dvoje</h2>
-                                  <p class="dark:text-gray-300 text-gray-700">Oseti povezanost sa partnerom, prijateljem ili članom porodice kroz izazovni kviz, gde se boduju tvoje veštine u učenju znakovnog jezika.</p>
+                                  <h2 id="tekst8" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Kviz za dvoje</h2>
+                                  <p id="tekst9" class="dark:text-gray-300 text-gray-700">Oseti povezanost sa partnerom, prijateljem ili članom porodice kroz izazovni kviz, gde se boduju tvoje veštine u učenju znakovnog jezika.</p>
                               </div>
                           </div>
                           <div class="overflow-hidden relative mt-6 sm:mt-auto h-fit -mb-[34px] -mr-[34px] sm:ml-6 py-6 p-6 border rounded-tl-lg dark:bg-white/5 dark:border-white/10">
@@ -177,8 +177,8 @@
                                   </svg>
                                   </div>
                               <div class="space-y-2">
-                                  <h2 class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Učenje kroz igre</h2>
-                                  <p class="dark:text-gray-300 text-gray-700">Istraži naš single-player kviz koji omogućava brzo učenje novih znakovnih jezika dok putuješ u inostranstvo ili se pripremaš za komunikaciju na novim lokacijama.</p>
+                                  <h2 id="tekst10" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Učenje kroz igre</h2>
+                                  <p id="tekst11" class="dark:text-gray-300 text-gray-700">Istraži naš single-player kviz koji omogućava brzo učenje novih znakovnih jezika dok putuješ u inostranstvo ili se pripremaš za komunikaciju na novim lokacijama.</p>
                               </div>
                           </div>
                           <div class="mt-6 relative sm:-mr-[--card-padding] sm:-my-8 before:absolute before:w-px before:inset-0 before:mx-auto before:bg-gray-200 dark:before:bg-gray-800">
