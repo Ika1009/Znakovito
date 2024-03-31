@@ -136,9 +136,6 @@ function checkAnswer(option, correctSrc) {
             iicon.classList.remove("bg-red-100");
             check.classList.remove("hidden");
         }
-        displayQuestion();
-        
-
     });
 }
 
