@@ -133,9 +133,8 @@ function checkAnswer(option) {
     const confirmButton = document.getElementById('confirm-button');
     confirmButton.addEventListener('click', function() {
         popup.classList.add("hidden");
-        if (isCorrect) {
-            displayQuestion();
-        }
+        displayQuestion();
+        
     });
 }
 
