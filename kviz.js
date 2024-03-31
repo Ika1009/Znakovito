@@ -115,16 +115,59 @@ const quizQuestionsNaEngleskom = [
     }
 ];
 
+let currentQuestionIndex = 0;
 
-// Example usage:
-console.log(quizQuestions[0].question); // "What is the capital of France?"
-console.log(quizQuestions[0].options[0].text); // "Paris"
-console.log(quizQuestions[1].options[1].isCorrect); // true
+function displayQuestion() {
+    const questionContainer = document.getElementById("question");
+    const optionsContainer = document.getElementById("options");
 
-// Iterate through all quiz questions
-quizQuestions.forEach((question, index) => {
-    console.log(`Question ${index + 1}: ${question.question}`);
-    question.options.forEach((option, optionIndex) => {
-        console.log(`Option ${optionIndex + 1}: ${option.text} (Correct: ${option.isCorrect})`);
+    const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
+    questionContainer.textContent = currentQuestion.question;
+    let imgCounter = 1;
+    currentQuestion.options.forEach((option, index) => {
+        const img = document.getElementById(imgCounter);
+        img.src = option.text;
+    
+        //const grandparent = img.parentElement.parentElement;
+        //const newGrandparent = grandparent.cloneNode(true);
+        //img.parentElement.replaceChild(newGrandparent, grandparent);
+        //newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
+        img.addEventListener("click", () => checkAnswer(option.isCorrect));
+        
+        imgCounter++;
     });
-});
+    currentQuestionIndex++;
+}
+
+function checkAnswer(isCorrect) {
+    console.log("Check answer")
+    const resultText = document.getElementById("popupDescription"); // Assuming you have a result-text element in your modal
+    const acceptPrivacyEl = document.getElementById('confirm-button');
+
+    if (isCorrect) {
+        resultText.textContent = "Correct!";
+        console.log("Correct");
+        currentQuestionIndex++;
+    } else {
+        resultText.textContent = "Incorrect!";
+        console.log("Incorrect");
+    }
+
+    // Show the modal with the result
+    popup.classList.remove("hidden");
+
+    // Hide the modal and display the next question when the user confirms
+    const confirmButton = document.getElementById('confirm-button');
+    confirmButton.addEventListener('click', function() {
+        popup.classList.add("hidden");
+        if (isCorrect) {
+            displayQuestion();
+        }
+    });
+}
+
+const popup = document.getElementById('info-popup');
+
+// Call displayQuestion() to start the quiz
+displayQuestion();
+
