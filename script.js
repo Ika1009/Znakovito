@@ -53,8 +53,8 @@ function displaySignLanguage(text) {
     // Function to show an image for a letter
     function showImage(letter) {
         const img = document.createElement('img');
-        img.width = 100;
-        img.height = 100;
+        img.width = 150;
+        img.height = 150;
         img.src = `./znakovi/${letter}.png`;
         img.alt = letter;
         container.appendChild(img);
@@ -137,8 +137,9 @@ function displaySignLanguage(text) {
         }
         // Add a space between words
         const space = document.createElement('div');
-        space.width = 500;
-        space.height = 5;
+        space.width = 100;
+        space.style.display = "inline-block";
+        space.height = 100;
         container.appendChild(space);
     });
 
