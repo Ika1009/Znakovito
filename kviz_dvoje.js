@@ -59,6 +59,12 @@ let scores = [0, 0];
 let currentQuestionIndex = 0;
 let currentPlayer = 0;
 
+function closeModal()
+{
+    const prvipoput = document.getElementById("my-modal").classList.add("hidden");
+    playerUsernames[0] = document.getElementById("default-input").textContent;
+}
+
 let playerUsernames = ["Player 1 Username", "Player 2 Username"];
 
 function displayQuestion() {
@@ -126,11 +132,6 @@ function checkAnswer(option) {
     });
 }
 
-function closeModal()
-{
-    const prvipoput = document.getElementById("my-modal").classList.add("hidden");
-    username = document.getElementById("default-input").textContent;
-}
 
 const popup = document.getElementById('info-popup');
 
