@@ -111,7 +111,7 @@ function checkAnswer(option) {
         console.log("Correct");
     } else {
         scores[currentPlayer]--;
-        resultText.textContent = playerUsernames[currentPlayer] + " Incorrect! - " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
+        resultText.textContent = " Incorrect! " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
         helpText.textContent = "The correct answer was: ";
         document.getElementById("popupImage").src = option.text; // Corrected this line
         iicon.classList.add("bg-red-100");
