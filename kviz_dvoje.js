@@ -126,6 +126,12 @@ function checkAnswer(option) {
     });
 }
 
+function closeModal()
+{
+    const prvipoput = document.getElementById("my-modal").classList.add("hidden");
+    username = document.getElementById("default-input").textContent;
+}
+
 const popup = document.getElementById('info-popup');
 
 displayQuestion();
