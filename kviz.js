@@ -75,7 +75,7 @@ function displayQuestion() {
         const confirmButton = document.getElementById('confirm-button');
             confirmButton.addEventListener('click', function() {
             popup.classList.add("hidden");
-            windows.location.href = "https://bonanza.rs/fon/landing.html";
+            windows.location.href = "./index.html";
         });
     }
     
@@ -84,16 +84,23 @@ function displayQuestion() {
 
     const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
+    let imgCounter = 1;
     currentQuestion.options.forEach((option, index) => {
-        const img = document.getElementById(index + 1);
+        const img = document.getElementById(imgCounter);
         img.src = option.text;
-        const correctOption = currentQuestion.options.find(option => option.isCorrect);
-        img.addEventListener("click", () => checkAnswer(option, correctOption.text));
-        console.log("Slika " + img.src + " option " + option);
+    
+        //const grandparent = img.parentElement.parentElement;
+        //const newGrandparent = grandparent.cloneNode(true);
+        //img.parentElement.replaceChild(newGrandparent, grandparent);
+        //newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
+        img.addEventListener("click", () => checkAnswer(option));
+        
+        imgCounter++;
     });
+    currentQuestionIndex++;
 }
 
-function checkAnswer(option, correctSrc) {
+function checkAnswer(option) {
     let isCorrect = option.isCorrect;
     console.log("Check answer")
     const icon = document.getElementById("icon");
@@ -109,11 +116,10 @@ function checkAnswer(option, correctSrc) {
         icon.classList.add("hidden");
         console.log("Correct");
         score++;
-        currentQuestionIndex++;
     } else {
         resultText.textContent = "Incorrect!";
         helpText.textContent = "The correct answer was: ";
-        document.getElementById("popupImage").src = correctSrc;
+        popup.getElementById("popupImage").src = option.text;
         iicon.classList.add("bg-red-100");
         check.classList.add("hidden");
         console.log("Incorrect");
@@ -127,7 +133,7 @@ function checkAnswer(option, correctSrc) {
     const confirmButton = document.getElementById('confirm-button');
     confirmButton.addEventListener('click', function() {
         popup.classList.add("hidden");
-        if (isCorrect && currentQuestionIndex < 7) {
+        if (isCorrect) {
             icon.classList.remove("hidden");
             iicon.classList.remove("bg-green-100");
             displayQuestion();
@@ -135,8 +141,10 @@ function checkAnswer(option, correctSrc) {
         else {
             iicon.classList.remove("bg-red-100");
             check.classList.remove("hidden");
-            windows.location.href = "https://bonanza.rs/fon/landing.html";
         }
+        displayQuestion();
+        
+
     });
 }
 
@@ -159,6 +167,7 @@ const selectLanguage = (langCode) => {
         img.classList.add('h-5', 'w-5', 'rounded-full', 'me-2');
         let targetDiv = document.getElementById('languageButton');
         targetDiv.appendChild(img);
+        break;
       case 'fr':
         selectedLanguageCurrent = "fr";
         languageButton.textContent = "Français";
