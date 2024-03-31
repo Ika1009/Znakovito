@@ -19,7 +19,7 @@ const startListening = () => {
         return;
     }
 
-    recognition.lang = 'sr'; // Specify the language
+    recognition.lang = selectedLanguageCurrent; // Specify the language
 
     recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
