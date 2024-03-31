@@ -136,7 +136,7 @@ function displaySignLanguage(text) {
             showImage(letter);
         }
         // Add a space between words
-        container.appendChild(document.createTextNode('         '));
+        container.appendChild(document.createTextNode('                 '));
     });
 
     // Function to convert Cyrillic to Latin script
