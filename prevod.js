@@ -27,7 +27,14 @@ const selectLanguage = (langCode) => {
         targetDiv3.appendChild(img3);
         break;
       case 'sr':
-        selectedLanguageCurrent = "sr";    
+        selectedLanguageCurrent = "sr"; 
+        languageButton.textContent = "Srpski";
+        let img6 = document.createElement('img');
+        img6.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/1200px-Flag_of_Serbia.svg.png';
+        img6.alt = 'Zastava Srbije';
+        img6.classList.add('h-5', 'w-5', 'rounded-full', 'me-2');
+        let targetDiv6 = document.getElementById('languageButton');
+        targetDiv6.appendChild(img6);
         break;
       case 'de':
         selectedLanguageCurrent = "de";
