@@ -83,18 +83,32 @@ function displaySignLanguage(text) {
     // Function to map special words based on the selected language
     const mapSpecialWords = (word) => {
         const specialWordsMapping = {
-            'sr': ['majk', 'prijatelj', 'zdravo'],
+            'sr': ['majka', 'prijatelj', 'zdravo'],
             'es': ['madre', 'amigo', 'hola'],
             'en': ['mother', 'friend', 'hello']
         };
+    
+        const languageMapping = {
+            'majka': 'majka',
+            'madre': 'majka',
+            'mother': 'majka',
+            'prijatelj': 'prijatelj',
+            'amigo': 'prijatelj',
+            'friend': 'prijatelj',
+            'zdravo': 'zdravo',
+            'hola': 'zdravo',
+            'hello': 'zdravo'
+        };
+    
         const specialWords = specialWordsMapping[selectedLanguageCurrent] || [];
         const specialWord = specialWords.find(special => word.toLowerCase().includes(special)) || '';
         if (specialWord && specialWord !== '') {
-            showImage(specialWord);
+            showImage(languageMapping[specialWord]);
             return true; // Indicate that a special word was found
         }
         return false; // Indicate that no special word was found
     };
+
 
 
     // Replace love phrases with 'ily'
