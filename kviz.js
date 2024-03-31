@@ -135,20 +135,21 @@ function displayQuestion() {
 }
 
 function checkAnswer(isCorrect) {
+    console.log("Check answer")
     const infoPopup = document.getElementById("info-popup");
     const resultText = document.getElementById("result-text"); // Assuming you have a result-text element in your modal
     const acceptPrivacyEl = document.getElementById('confirm-button');
 
     if (isCorrect) {
         resultText.textContent = "Correct!";
+        console.log("Correct");
         currentQuestionIndex++;
     } else {
         resultText.textContent = "Incorrect!";
+        console.log("Incorrect");
     }
 
     // Show the modal with the result
-    infoPopup.classList.remove("hidden");
-    const privacyModal = new Modal(infoPopup, { placement: 'center' });
     privacyModal.show();
 
     // Hide the modal and display the next question when the user confirms
@@ -160,19 +161,11 @@ function checkAnswer(isCorrect) {
     });
 }
 
-
-// Call displayQuestion() to start the quiz
-displayQuestion();
-
 const modalEl = document.getElementById('info-popup');
 const privacyModal = new Modal(modalEl, {
     placement: 'center'
 });
 
-privacyModal.show();
+// Call displayQuestion() to start the quiz
+displayQuestion();
 
-const acceptPrivacyEl = document.getElementById('confirm-button');
-acceptPrivacyEl.addEventListener('click', function() {
-    alert('privacy accepted');
-    privacyModal.hide();
-});
