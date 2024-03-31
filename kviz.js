@@ -128,10 +128,15 @@ function displayQuestion() {
     currentQuestion.options.forEach((option, index) => {
         const img = document.getElementById(imgCounter);
         img.src = option.text;
-        img.addEventListener("click", () => checkAnswer(option.isCorrect));
-        optionsContainer.appendChild(img);
+    
+        const grandparent = img.parentElement.parentElement;
+        const newGrandparent = grandparent.cloneNode(true);
+        img.parentElement.replaceChild(newGrandparent, grandparent);
+        newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
+        
         imgCounter++;
     });
+
 }
 
 function checkAnswer(isCorrect) {
