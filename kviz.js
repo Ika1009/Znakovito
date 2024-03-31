@@ -124,17 +124,9 @@ function displayQuestion() {
     const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
     let imgCounter = 1;
-    optionsContainer.innerHTML = "";
-        // Get the image element by its id
+    // Get the image element by its id
     const imageElement = document.getElementById('1');
-    
-    // Add an event listener for the click event
-    imageElement.addEventListener('click', () => {
-        // Write something out when the image is clicked
-        console.log('Image clicked!');
-        // You can replace console.log with any action you want to perform
-    });
-
+    console.log(imageElement);
     currentQuestion.options.forEach((option, index) => {
         const img = document.getElementById(imgCounter);
         img.src = option.text;
