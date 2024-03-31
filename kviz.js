@@ -154,10 +154,10 @@ function checkAnswer(isCorrect) {
     }
 
     // Show the modal with the result
-    privacyModal.show();
+    popup.show();
 
     // Hide the modal and display the next question when the user confirms
-    acceptPrivacyEl.addEventListener('click', function() {
+    popup.addEventListener('click', function() {
         privacyModal.hide();
         if (isCorrect) {
             displayQuestion();
@@ -165,10 +165,7 @@ function checkAnswer(isCorrect) {
     });
 }
 
-const modalEl = document.getElementById('info-popup');
-const privacyModal = new Modal(modalEl, {
-    placement: 'center'
-});
+const popup = document.getElementById('info-popup');
 
 // Call displayQuestion() to start the quiz
 displayQuestion();
