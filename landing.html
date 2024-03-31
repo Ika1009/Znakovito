@@ -21,12 +21,12 @@
           <span class="self-center text-2xl font-semibold whitespace-nowrap ">Znakovito</span>
       </a>
       <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
-          <button id="languageButton" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          <button id="languageButton" type="button" data-dropdown-toggle="language-dropdown-menu" class="focus:bg-background inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-text rounded-lg cursor-pointer ">
             <img id="zastava" class="h-5 w-5 rounded-full me-2" src="resursi/serbia-flag-icon.svg" alt="Zastava Srbije">
             Srpski
           </button>
           <!-- Dropdown -->
-          <div class="z-50 hidden my-4 absolute top-10 text-base list-none divide-y divide-gray-100 rounded-lg shadow" id="languageOptions">
+          <div class="z-50 hidden my-4 absolute top-10 text-base list-none divide-y bg-background divide-gray-100 rounded-lg shadow" id="languageOptions">
             <ul class="py-2 font-medium" role="none">
               <li>
                 <a href="#" onclick="selectLanguage('en')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
@@ -84,7 +84,9 @@
       </div>
       </div>
     </nav>
-    <div  style="height: 90vh; background-image: url(./resursi/bg.svg);" class="flex align-middle justify-center text-center items-center w-screen"> 
+      
+    </div>
+    <div  style="height: 90vh;" class="flex bg-primary align-middle justify-center text-center items-center w-screen"> 
         <div class="container mx-auto">
           <div class="pt-16 flex flex-wrap items-center justify-center">
             <div class="w-full px-4 lg:w-5/12">
@@ -108,101 +110,112 @@
         </div>
       </div>    
     </div>
+
+    <div class="w-screen h-44 absolute from-primary bg-primary to-background left-0 z-50" style="top: 75vh;background: hsla(52, 98%, 50%, 1);
+
+    background: linear-gradient(270deg, hsla(52, 98%, 50%, 1) 0%, hsla(52, 94%, 63%, 1) 50%, hsla(50, 43%, 97%, 1) 100%);
+    
+    background: -moz-linear-gradient(270deg, hsla(52, 98%, 50%, 1) 0%, hsla(52, 94%, 63%, 1) 50%, hsla(50, 43%, 97%, 1) 100%);
+    
+    background: -webkit-linear-gradient(270deg, hsla(52, 98%, 50%, 1) 0%, hsla(52, 94%, 63%, 1) 50%, hsla(50, 43%, 97%, 1) 100%);
+    "></div>
           
     <!-- component -->
-<section>
-  <div class="py-16 bg-background">
-      <div class="mx-auto px-6 max-w-6xl text-gray-500">
-          <div class="relative">
-              <div class="relative z-10 grid gap-3 grid-cols-6">
-                  <div class="col-span-full lg:col-span-2 overflow-hidden flex relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
-                    <div class="size-fit m-auto relative">
-                        <div class="relative h-24 w-56 flex flex-col items-center">
-                            <svg class="absolute inset-0 size-full text-gray-400 dark:text-gray-600" viewBox="0 0 254 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M112.891 97.7022C140.366 97.0802 171.004 94.6715 201.087 87.5116C210.43 85.2881 219.615 82.6412 228.284 78.2473C232.198 76.3179 235.905 73.9942 239.348 71.3124C241.85 69.2557 243.954 66.7571 245.555 63.9408C249.34 57.3235 248.281 50.5341 242.498 45.6109C239.033 42.7237 235.228 40.2703 231.169 38.3054C219.443 32.7209 207.141 28.4382 194.482 25.534C184.013 23.1927 173.358 21.7755 162.64 21.2989C161.376 21.3512 160.113 21.181 158.908 20.796C158.034 20.399 156.857 19.1682 156.962 18.4535C157.115 17.8927 157.381 17.3689 157.743 16.9139C158.104 16.4588 158.555 16.0821 159.067 15.8066C160.14 15.4683 161.274 15.3733 162.389 15.5286C179.805 15.3566 196.626 18.8373 212.998 24.462C220.978 27.2494 228.798 30.4747 236.423 34.1232C240.476 36.1159 244.202 38.7131 247.474 41.8258C254.342 48.2578 255.745 56.9397 251.841 65.4892C249.793 69.8582 246.736 73.6777 242.921 76.6327C236.224 82.0192 228.522 85.4602 220.502 88.2924C205.017 93.7847 188.964 96.9081 172.738 99.2109C153.442 101.949 133.993 103.478 114.506 103.79C91.1468 104.161 67.9334 102.97 45.1169 97.5831C36.0094 95.5616 27.2626 92.1655 19.1771 87.5116C13.839 84.5746 9.1557 80.5802 5.41318 75.7725C-0.54238 67.7259 -1.13794 59.1763 3.25594 50.2827C5.82447 45.3918 9.29572 41.0315 13.4863 37.4319C24.2989 27.5721 37.0438 20.9681 50.5431 15.7272C68.1451 8.8849 86.4883 5.1395 105.175 2.83669C129.045 0.0992292 153.151 0.134761 177.013 2.94256C197.672 5.23215 218.04 9.01724 237.588 16.3889C240.089 17.3418 242.498 18.5197 244.933 19.6446C246.627 20.4387 247.725 21.6695 246.997 23.615C246.455 25.1105 244.814 25.5605 242.63 24.5811C230.322 18.9961 217.233 16.1904 204.117 13.4376C188.761 10.3438 173.2 8.36665 157.558 7.52174C129.914 5.70776 102.154 8.06792 75.2124 14.5228C60.6177 17.8788 46.5758 23.2977 33.5102 30.6161C26.6595 34.3329 20.4123 39.0673 14.9818 44.658C12.9433 46.8071 11.1336 49.1622 9.58207 51.6855C4.87056 59.5336 5.61172 67.2494 11.9246 73.7608C15.2064 77.0494 18.8775 79.925 22.8564 82.3236C31.6176 87.7101 41.3848 90.5291 51.3902 92.5804C70.6068 96.5773 90.0219 97.7419 112.891 97.7022Z" fill="currentColor"></path>
-                            </svg>
-                            <span class="w-fit block mx-auto text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-orange-600 dark:from-yellow-400 dark:to-orange-400">85%</span>
-                            <div class="flex flex-col items-center space-y-2">
-                                <h2 id="tekst4" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Gluvonemih osoba</h2>
-                                <p id="tekst5" class="dark:text-gray-300 text-gray-700">stupa u brak sa drugom gluvonemom osobom</p>
+    <section>
+      <div class="pt-24 bg-background">
+          <div class="mx-auto px-6 max-w-6xl text-gray-500">
+              <div class="relative">
+                  <div class="relative z-10 grid gap-3 grid-cols-6">
+                      <div class="col-span-full lg:col-span-2 overflow-hidden flex relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div class="size-fit m-auto relative">
+                            <div class="relative h-24 w-56 flex flex-col items-center">
+                                <svg class="absolute -mt-8 inset-0 size-full text-primary" viewBox="0 0 254 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M112.891 97.7022C140.366 97.0802 171.004 94.6715 201.087 87.5116C210.43 85.2881 219.615 82.6412 228.284 78.2473C232.198 76.3179 235.905 73.9942 239.348 71.3124C241.85 69.2557 243.954 66.7571 245.555 63.9408C249.34 57.3235 248.281 50.5341 242.498 45.6109C239.033 42.7237 235.228 40.2703 231.169 38.3054C219.443 32.7209 207.141 28.4382 194.482 25.534C184.013 23.1927 173.358 21.7755 162.64 21.2989C161.376 21.3512 160.113 21.181 158.908 20.796C158.034 20.399 156.857 19.1682 156.962 18.4535C157.115 17.8927 157.381 17.3689 157.743 16.9139C158.104 16.4588 158.555 16.0821 159.067 15.8066C160.14 15.4683 161.274 15.3733 162.389 15.5286C179.805 15.3566 196.626 18.8373 212.998 24.462C220.978 27.2494 228.798 30.4747 236.423 34.1232C240.476 36.1159 244.202 38.7131 247.474 41.8258C254.342 48.2578 255.745 56.9397 251.841 65.4892C249.793 69.8582 246.736 73.6777 242.921 76.6327C236.224 82.0192 228.522 85.4602 220.502 88.2924C205.017 93.7847 188.964 96.9081 172.738 99.2109C153.442 101.949 133.993 103.478 114.506 103.79C91.1468 104.161 67.9334 102.97 45.1169 97.5831C36.0094 95.5616 27.2626 92.1655 19.1771 87.5116C13.839 84.5746 9.1557 80.5802 5.41318 75.7725C-0.54238 67.7259 -1.13794 59.1763 3.25594 50.2827C5.82447 45.3918 9.29572 41.0315 13.4863 37.4319C24.2989 27.5721 37.0438 20.9681 50.5431 15.7272C68.1451 8.8849 86.4883 5.1395 105.175 2.83669C129.045 0.0992292 153.151 0.134761 177.013 2.94256C197.672 5.23215 218.04 9.01724 237.588 16.3889C240.089 17.3418 242.498 18.5197 244.933 19.6446C246.627 20.4387 247.725 21.6695 246.997 23.615C246.455 25.1105 244.814 25.5605 242.63 24.5811C230.322 18.9961 217.233 16.1904 204.117 13.4376C188.761 10.3438 173.2 8.36665 157.558 7.52174C129.914 5.70776 102.154 8.06792 75.2124 14.5228C60.6177 17.8788 46.5758 23.2977 33.5102 30.6161C26.6595 34.3329 20.4123 39.0673 14.9818 44.658C12.9433 46.8071 11.1336 49.1622 9.58207 51.6855C4.87056 59.5336 5.61172 67.2494 11.9246 73.7608C15.2064 77.0494 18.8775 79.925 22.8564 82.3236C31.6176 87.7101 41.3848 90.5291 51.3902 92.5804C70.6068 96.5773 90.0219 97.7419 112.891 97.7022Z" fill="currentColor"></path>
+                                </svg>
+                                <span class="w-fit block mx-auto text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-orange-600 dark:from-yellow-400 dark:to-orange-400">85%</span>
+                                <div class="flex flex-col items-center space-y-2 mt-6">
+                                    <h2 id="tekst4" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 ">Gluvonemih </h2>
+                                    <p id="tekst5" class="dark:text-gray-300 text-gray-700">stupa u brak sa drugom gluvonemom osobom</p>
+                                </div>
                             </div>
+                            <h2 class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-3xl"></h2>
                         </div>
-                        <h2 class="mt-6 text-center font-semibold text-gray-950 dark:text-white text-3xl"></h2>
-                    </div>
-                  </div>
-                  <div class="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
-                      <div>
-                          <div class="mt-20 text-center relative z-10 space-y-2">
-                              <h2 id="tekst4" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Više od 466 miliona ljudi</h2>
-                              <p id="tekst5" class="dark:text-gray-300 text-gray-700"> širom sveta ima problema sa sluhom, i moraju koristiti znakovni jezik što dovodi do velike jezičke barijere pri putovanju u inostranstvo.</p>
-                          </div>
                       </div>
-                  </div>
-                  <div class="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
-                      <div>
-                          <div class="mt-14 text-center relative z-10 space-y-2">
-                              <h2 id="tekst6" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Audio i tekst prevod</h2>
-                              <p id="tekst7" class="dark:text-gray-300 text-gray-700">Bez obzira da li koristiš glasovne poruke, tekstualni unos ili audio fajlove, Znakovito nudi precizan prevod u znakovni jezik - prilagođen različitim lokalnim dijalektima.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
-                      <div class="grid sm:grid-cols-2">
-                          <div class="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
-                              <div class="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
-                                  <svg class="size-6 m-auto" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                      <path fill="none" stroke="currentColor" stroke-linejoin="round" d="M5.5 7c2 0 6.5-3 6.5-3s4.5 3 6.5 3v4.5C18.5 18 12 20 12 20s-6.5-2-6.5-8.5z"></path>
-                                  </svg>
-                                  </div>
-                              <div class="space-y-2">
-                                  <h2 id="tekst8" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Kviz za dvoje</h2>
-                                  <p id="tekst9" class="dark:text-gray-300 text-gray-700">Oseti povezanost sa partnerom, prijateljem ili članom porodice kroz izazovni kviz, gde se boduju tvoje veštine u učenju znakovnog jezika.</p>
+                      <div class="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden justify-center flex-col text-start align-middle items-center relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                          <div>
+                              <div class="text-center relative z-10 space-y-2">
+                                  <img src="./resursi/hearing-loss.png" class="h-20 ml-24"/>
+                                  <h2 id="tekst4" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Oko 466 miliona ljudi</h2>
+                                  <p id="tekst5" class="dark:text-gray-300 text-gray-700"> širom sveta ima problema sa sluhom, i moraju koristiti znakovni jezik što dovodi do velike jezičke barijere pri putovanju u inostranstvo.</p>
                               </div>
                           </div>
-                          <div class="overflow-hidden relative mt-6 sm:mt-auto h-fit -mb-[34px] -mr-[34px] sm:ml-6 py-6 p-6 border rounded-tl-lg dark:bg-white/5 dark:border-white/10">
-                              <div class="absolute flex gap-1 top-2 left-3">
-                                  <span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"></span>
-                                  <span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"></span>
-                                  <span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"></span>
+                      </div>
+                      <div class="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                          <div>
+                              <div class="mt-14 text-center relative z-10 space-y-2">
+                                  <h2 id="tekst6" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Audio i tekst prevod</h2>
+                                  <p id="tekst7" class="dark:text-gray-300 text-gray-700">Bez obzira da li koristiš glasovne poruke, tekstualni unos ili audio fajlove, Znakovito nudi precizan prevod u znakovni jezik - prilagođen različitim lokalnim dijalektima.</p>
                               </div>
-                              <img src="resursi/logo.svg" alt="Description of the image">
                           </div>
                       </div>
-                  </div>
-                  <div class="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
-                      <div class="h-full grid sm:grid-cols-2">
-                          <div class="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
+                      <div class="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                          <div class="grid sm:grid-cols-2">
+                              <div class="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
                                   <div class="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
-                                  <svg class="size-6 m-auto" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                      <g fill="none">
-                                          <path stroke="currentColor" d="M9 6a3 3 0 1 0 6 0a3 3 0 0 0-6 0zm-4.562 7.902a3 3 0 1 0 3 5.195a3 3 0 0 0-3-5.196zm15.124 0a2.999 2.999 0 1 1-2.998 5.194a2.999 2.999 0 0 1 2.998-5.194z"></path>
-                                          <path fill="currentColor" fill-rule="evenodd" d="M9.003 6.125a2.993 2.993 0 0 1 .175-1.143a8.507 8.507 0 0 0-5.031 4.766a8.5 8.5 0 0 0-.502 4.817a3 3 0 0 1 .902-.723a7.498 7.498 0 0 1 4.456-7.717m5.994 0a7.499 7.499 0 0 1 4.456 7.717a2.998 2.998 0 0 1 .902.723a8.5 8.5 0 0 0-5.533-9.583a3 3 0 0 1 .175 1.143m2.536 13.328a3.002 3.002 0 0 1-1.078-.42a7.501 7.501 0 0 1-8.91 0l-.107.065a3 3 0 0 1-.971.355a8.5 8.5 0 0 0 11.066 0" clip-rule="evenodd"></path>
-                                      </g>
-                                  </svg>
+                                      <svg class="size-6 m-auto" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                          <path fill="none" stroke="currentColor" stroke-linejoin="round" d="M5.5 7c2 0 6.5-3 6.5-3s4.5 3 6.5 3v4.5C18.5 18 12 20 12 20s-6.5-2-6.5-8.5z"></path>
+                                      </svg>
+                                      </div>
+                                  <div class="space-y-2">
+                                      <h2 id="tekst8" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Kviz za dvoje</h2>
+                                      <p id="tekst9" class="dark:text-gray-300 text-gray-700">Oseti povezanost sa partnerom, prijateljem ili članom porodice kroz izazovni kviz, gde se boduju tvoje veštine u učenju znakovnog jezika.</p>
                                   </div>
-                              <div class="space-y-2">
-                                  <h2 id="tekst10" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Učenje kroz igre</h2>
-                                  <p id="tekst11" class="dark:text-gray-300 text-gray-700">Istraži naš single-player kviz koji omogućava brzo učenje novih znakovnih jezika dok putuješ u inostranstvo ili se pripremaš za komunikaciju na novim lokacijama.</p>
+                              </div>
+                              <div class="overflow-hidden relative mt-6 sm:mt-auto h-fit -mb-[34px] -mr-[34px] sm:ml-6 py-6 p-6 border rounded-tl-lg dark:bg-white/5 dark:border-white/10">
+                                  <div class="absolute flex gap-1 top-2 left-3">
+                                      <span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"></span>
+                                      <span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"></span>
+                                      <span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"></span>
+                                  </div>
+                                  <img src="resursi/logo.svg" alt="Description of the image">
                               </div>
                           </div>
-                          <div class="mt-6 relative sm:-mr-[--card-padding] sm:-my-8 before:absolute before:w-px before:inset-0 before:mx-auto before:bg-gray-200 dark:before:bg-gray-800">
-                              <div class="relative space-y-6 py-6 flex flex-col justify-center h-full">
-                                  <div class="flex items-center justify-end gap-2 w-[calc(50%+0.875rem)] relative">
-                                      <span class="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">Test</span>
-                                      <div class="size-7 ring-4 ring-white dark:ring-[--card-dark-bg]">
-                                          <img class="rounded-full  border border-gray-950/5 dark:border-white/5 size-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Eo_circle_orange_number-3.svg/2048px-Eo_circle_orange_number-3.svg.png" alt="" />
+                      </div>
+                      <div class="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                          <div class="h-full grid sm:grid-cols-2">
+                              <div class="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
+                                      <div class="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
+                                      <svg class="size-6 m-auto" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                          <g fill="none">
+                                              <path stroke="currentColor" d="M9 6a3 3 0 1 0 6 0a3 3 0 0 0-6 0zm-4.562 7.902a3 3 0 1 0 3 5.195a3 3 0 0 0-3-5.196zm15.124 0a2.999 2.999 0 1 1-2.998 5.194a2.999 2.999 0 0 1 2.998-5.194z"></path>
+                                              <path fill="currentColor" fill-rule="evenodd" d="M9.003 6.125a2.993 2.993 0 0 1 .175-1.143a8.507 8.507 0 0 0-5.031 4.766a8.5 8.5 0 0 0-.502 4.817a3 3 0 0 1 .902-.723a7.498 7.498 0 0 1 4.456-7.717m5.994 0a7.499 7.499 0 0 1 4.456 7.717a2.998 2.998 0 0 1 .902.723a8.5 8.5 0 0 0-5.533-9.583a3 3 0 0 1 .175 1.143m2.536 13.328a3.002 3.002 0 0 1-1.078-.42a7.501 7.501 0 0 1-8.91 0l-.107.065a3 3 0 0 1-.971.355a8.5 8.5 0 0 0 11.066 0" clip-rule="evenodd"></path>
+                                          </g>
+                                      </svg>
                                       </div>
+                                  <div class="space-y-2">
+                                      <h2 id="tekst10" class="text-2xl font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Učenje kroz igre</h2>
+                                      <p id="tekst11" class="dark:text-gray-300 text-gray-700">Istraži naš single-player kviz koji omogućava brzo učenje novih znakovnih jezika dok putuješ u inostranstvo ili se pripremaš za komunikaciju na novim lokacijama.</p>
                                   </div>
-                                  <div class="flex items-center gap-2 ml-[calc(50%-1rem)] relative">
-                                      <div class="size-8 ring-4 ring-white dark:ring-[--card-dark-bg]">
-                                          <img class="rounded-full  border border-gray-950/5 dark:border-white/5 size-full" src="https://w7.pngwing.com/pngs/374/545/png-transparent-circle-correct-mark-success-tick-yes-check-flat-actions-icon-thumbnail.png" alt="" />
+                              </div>
+                              <div class="mt-6 relative sm:-mr-[--card-padding] sm:-my-8 before:absolute before:w-px before:inset-0 before:mx-auto before:bg-gray-200 dark:before:bg-gray-800">
+                                  <div class="relative space-y-6 py-6 flex flex-col justify-center h-full">
+                                      <div class="flex items-center justify-end gap-2 w-[calc(50%+0.875rem)] relative">
+                                          <span class="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">Test</span>
+                                          <div class="size-7 ring-4 ring-white dark:ring-[--card-dark-bg]">
+                                              <img class="rounded-full  border border-gray-950/5 dark:border-white/5 size-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Eo_circle_orange_number-3.svg/2048px-Eo_circle_orange_number-3.svg.png" alt="" />
+                                          </div>
                                       </div>
-                                      <span class="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">Uvod</span>
-                                  </div>
-                                  <div class="flex items-center justify-end gap-2 w-[calc(50%+0.875rem)] relative">
-                                      <span class="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">Start</span>
-                                      <div class="size-7 ring-4 ring-white dark:ring-[--card-dark-bg]">
-                                          <img class="rounded-full  border border-gray-950/5 dark:border-white/5 size-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Eo_circle_orange_number-1.svg/1200px-Eo_circle_orange_number-1.svg.png" alt="" />
+                                      <div class="flex items-center gap-2 ml-[calc(50%-1rem)] relative">
+                                          <div class="size-8 ring-4 ring-white dark:ring-[--card-dark-bg]">
+                                              <img class="rounded-full  border border-gray-950/5 dark:border-white/5 size-full" src="https://w7.pngwing.com/pngs/374/545/png-transparent-circle-correct-mark-success-tick-yes-check-flat-actions-icon-thumbnail.png" alt="" />
+                                          </div>
+                                          <span class="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">Uvod</span>
+                                      </div>
+                                      <div class="flex items-center justify-end gap-2 w-[calc(50%+0.875rem)] relative">
+                                          <span class="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">Start</span>
+                                          <div class="size-7 ring-4 ring-white dark:ring-[--card-dark-bg]">
+                                              <img class="rounded-full  border border-gray-950/5 dark:border-white/5 size-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Eo_circle_orange_number-1.svg/1200px-Eo_circle_orange_number-1.svg.png" alt="" />
+                                          </div>
                                       </div>
                                   </div>
                               </div>
@@ -212,8 +225,7 @@
               </div>
           </div>
       </div>
-  </div>
-</section>
+    </section>
 
     <!-- ====== Pricing Section Start -->
     <!-- <section
@@ -1183,7 +1195,7 @@
 
     <!-- ====== Contact Section Start -->
     <section
-      class="relative z-10 overflow-hidden bg-background py-20 dark:bg-dark lg:py-[120px]"
+      class="relative z-10 overflow-hiddenpy-20 lg:py-[120px]" style="background-image: url(./resursi/kvizbg.svg);"
     >
       <div class="container mx-auto">
         <div class="-mx-4 flex flex-wrap lg:justify-between">
@@ -1195,7 +1207,7 @@
               <h2
                 class="mb-6 text-[32px] font-bold uppercase text-dark dark:text-white sm:text-[40px] lg:text-[36px] xl:text-[40px]"
               >
-                OSTANITE SA NAMA U KONTAKTU
+                OSTANIMO U KONTAKTU
               </h2>
               <p
                 class="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6"
