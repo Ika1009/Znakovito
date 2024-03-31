@@ -2,10 +2,13 @@ let scores = [0, 0];
 let currentQuestionIndex = 0;
 let currentPlayer = 0;
 
+// Add player usernames
+let playerUsernames = ["Player 1 Username", "Player 2 Username"];
+
 function displayQuestion() {
     if(currentQuestionIndex == 6) // Quiz finished
     {
-        document.getElementById("popupTitle").textContent = "Quiz Finished - Player 1: " + scores[0] + " - Player 2: " + scores[1];
+        document.getElementById("popupTitle").textContent = "Quiz Finished - " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
         document.getElementById("popupDesc").textContent = "The game has ended.";
         popup.classList.remove("hidden");
         const confirmButton = document.getElementById('confirm-button');
@@ -41,20 +44,20 @@ function checkAnswer(option) {
     const acceptPrivacyEl = document.getElementById('confirm-button');
 
     if (isCorrect) {
-        resultText.textContent = "Player " + (currentPlayer + 1) + " Correct! - Player 1: " + scores[0] + " - Player 2: " + scores[1];
+        scores[currentPlayer]++;
+        resultText.textContent = playerUsernames[currentPlayer] + " Correct! - " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
         helpText.textContent = "Proceed to the next question"
         iicon.classList.add("bg-green-100");
         icon.classList.add("text-green-600");
         console.log("Correct");
-        scores[currentPlayer]++;
     } else {
-        resultText.textContent = "Player " + (currentPlayer + 1) + " Incorrect! - Player 1: " + scores[0] + " - Player 2: " + scores[1];
+        scores[currentPlayer]--;
+        resultText.textContent = playerUsernames[currentPlayer] + " Incorrect! - " + playerUsernames[0] + ": " + scores[0] + " - " + playerUsernames[1] + ": " + scores[1];
         helpText.textContent = "The correct answer was: ";
         popup.getElementById("popupImage").src = option.text;
         iicon.classList.add("bg-red-100");
         icon.classList.add("text-red-600");
         console.log("Incorrect");
-        scores[currentPlayer]--;
     }
 
     // Show the modal with the result
