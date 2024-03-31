@@ -1,5 +1,4 @@
 // Create an array of quiz questions
-// Create an array of quiz questions
 const quizQuestionsNaSrpskom = [
     {
         question: "Koji znak predstavlja slovo Y u Američkom Znakovnom Jeziku?",
@@ -80,7 +79,7 @@ function displayQuestion() {
     const questionContainer = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
 
-    const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
+    const currentQuestion = quizQuestionsNaSrpskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
     let imgCounter = 1;
     currentQuestion.options.forEach((option, index) => {
