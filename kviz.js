@@ -123,14 +123,14 @@ function displayQuestion() {
 
     const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
-
+    let imgCounter = 1;
     optionsContainer.innerHTML = "";
     currentQuestion.options.forEach((option, index) => {
-        const img = document.createElement("img");
-        img.id = index + 1;
+        const img = document.getElementById(imgCounter);
         img.src = option.text;
         img.addEventListener("click", () => checkAnswer(option.isCorrect));
         optionsContainer.appendChild(img);
+        imgCounter++;
     });
 }
 
