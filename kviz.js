@@ -117,7 +117,7 @@ const quizQuestionsNaEngleskom = [
 
 let currentQuestionIndex = 0;
 
-displayQuestion() {
+function displayQuestion() {
     const questionContainer = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
 
