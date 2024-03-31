@@ -57,10 +57,11 @@ const quizQuestionsNaSrpskom = [
     }
 ];
 
-const username;
+let username;
 function closeModal()
 {
-    username = document.getElementById("default-modal").textContent;
+    const prvipoput = document.getElementById("my-modal").classList.add("hidden");
+    username = document.getElementById("default-input").textContent;
 }
 
 let score = 0;
