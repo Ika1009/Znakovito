@@ -128,10 +128,11 @@ function displayQuestion() {
         const img = document.getElementById(imgCounter);
         img.src = option.text;
     
-        const grandparent = img.parentElement.parentElement;
-        const newGrandparent = grandparent.cloneNode(true);
-        img.parentElement.replaceChild(newGrandparent, grandparent);
-        newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
+        //const grandparent = img.parentElement.parentElement;
+        //const newGrandparent = grandparent.cloneNode(true);
+        //img.parentElement.replaceChild(newGrandparent, grandparent);
+        //newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
+        img.addEventListener("click", () => checkAnswer(option.isCorrect));
         
         imgCounter++;
     });
