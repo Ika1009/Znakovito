@@ -115,19 +115,54 @@ const quizQuestionsNaEngleskom = [
     }
 ];
 
+let currentQuestionIndex = 0;
 
-// Example usage:
-console.log(quizQuestions[0].question); // "What is the capital of France?"
-console.log(quizQuestions[0].options[0].text); // "Paris"
-console.log(quizQuestions[1].options[1].isCorrect); // true
+function displayQuestion() {
+    const questionContainer = document.getElementById("question");
+    const optionsContainer = document.getElementById("options");
 
-// Iterate through all quiz questions
-quizQuestions.forEach((question, index) => {
-    console.log(`Question ${index + 1}: ${question.question}`);
-    question.options.forEach((option, optionIndex) => {
-        console.log(`Option ${optionIndex + 1}: ${option.text} (Correct: ${option.isCorrect})`);
+    const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
+    questionContainer.textContent = currentQuestion.question;
+
+    optionsContainer.innerHTML = "";
+    currentQuestion.options.forEach((option, index) => {
+        const img = document.createElement("img");
+        img.id = index + 1;
+        img.src = option.text;
+        img.addEventListener("click", () => checkAnswer(option.isCorrect));
+        optionsContainer.appendChild(img);
     });
-});
+}
+
+function checkAnswer(isCorrect) {
+    const infoPopup = document.getElementById("info-popup");
+    const resultText = document.getElementById("result-text"); // Assuming you have a result-text element in your modal
+    const acceptPrivacyEl = document.getElementById('confirm-button');
+
+    if (isCorrect) {
+        resultText.textContent = "Correct!";
+        currentQuestionIndex++;
+    } else {
+        resultText.textContent = "Incorrect!";
+    }
+
+    // Show the modal with the result
+    infoPopup.classList.remove("hidden");
+    const privacyModal = new Modal(infoPopup, { placement: 'center' });
+    privacyModal.show();
+
+    // Hide the modal and display the next question when the user confirms
+    acceptPrivacyEl.addEventListener('click', function() {
+        privacyModal.hide();
+        if (isCorrect) {
+            displayQuestion();
+        }
+    });
+}
+
+
+// Call displayQuestion() to start the quiz
+displayQuestion();
 
 const modalEl = document.getElementById('info-popup');
 const privacyModal = new Modal(modalEl, {
