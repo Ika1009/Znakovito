@@ -113,7 +113,7 @@ function checkAnswer(option) {
         resultText.textContent = "Correct!";
         helpText.textContent = "Proceed to the next question"
         iicon.classList.add("bg-green-100");
-        icon.classList.add("text-green-600");
+        icon.classList.add("hidden");
         console.log("Correct");
         score++;
     } else {
@@ -121,7 +121,7 @@ function checkAnswer(option) {
         helpText.textContent = "The correct answer was: ";
         popup.getElementById("popupImage").src = option.text;
         iicon.classList.add("bg-red-100");
-        icon.classList.add("text-red-600");
+        check.classList.add("hidden");
         console.log("Incorrect");
         score--;
     }
@@ -134,7 +134,13 @@ function checkAnswer(option) {
     confirmButton.addEventListener('click', function() {
         popup.classList.add("hidden");
         if (isCorrect) {
+            icon.classList.remove("hidden");
+            iicon.classList.remove("bg-green-100");
             displayQuestion();
+        }
+        else {
+            iicon.classList.remove("bg-red-100");
+            check.classList.remove("hidden");
         }
     });
 }
