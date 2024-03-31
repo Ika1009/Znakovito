@@ -127,7 +127,7 @@ function checkAnswer(option, correctSrc) {
     const confirmButton = document.getElementById('confirm-button');
     confirmButton.addEventListener('click', function() {
         popup.classList.add("hidden");
-        if (isCorrect) {
+        if (isCorrect && currentQuestionIndex < 7) {
             icon.classList.remove("hidden");
             iicon.classList.remove("bg-green-100");
             displayQuestion();
@@ -135,6 +135,7 @@ function checkAnswer(option, correctSrc) {
         else {
             iicon.classList.remove("bg-red-100");
             check.classList.remove("hidden");
+            windows.location.href = "https://bonanza.rs/fon/landing.html";
         }
     });
 }
