@@ -57,64 +57,11 @@ const quizQuestionsNaSrpskom = [
     }
 ];
 
-// Create an array of quiz questions
-const quizQuestionsNaEngleskom = [
-    {
-        question: "What sign represents the letter A in Serbian Sign Language?",
-        options: [
-            { text: "https://bonanza.rs/fon/znakovi/o_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/h_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/a_sr.png", isCorrect: true },
-            { text: "https://bonanza.rs/fon/znakovi/s_sr.png", isCorrect: false }
-        ]
-    },    
-    {
-        question: "What sign represents the letter Ć in Serbian Sign Language?",
-        options: [
-            { text: "https://bonanza.rs/fon/znakovi/c_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/ć_sr.png", isCorrect: true },
-            { text: "https://bonanza.rs/fon/znakovi/u_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/d_sr.png", isCorrect: false }
-        ]
-    },
-    {
-        question: "Which of these signs represents the word friendship?",
-        options: [
-            { text: "https://bonanza.rs/fon/znakovi/ily.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/majk.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/prijatelj.png", isCorrect: true },
-            { text: "https://bonanza.rs/fon/znakovi/zdravo.png", isCorrect: false }
-        ]
-    },
-    {
-        question: "What sign represents the letter N in Serbian Sign Language?",
-        options: [
-            { text: "https://bonanza.rs/fon/znakovi/j_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/đ_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/č_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/n_sr.png", isCorrect: true }
-        ]
-    },    
-    {
-        question: "What sign represents the letter T in Serbian Sign Language?",
-        options: [
-            { text: "https://bonanza.rs/fon/znakovi/u_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/b_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/u_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/t_sr.png", isCorrect: true }
-        ]
-    },
-    {
-        question: "What sign represents the letter M in Serbian Sign Language?",
-        options: [
-            { text: "https://bonanza.rs/fon/znakovi/s_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/d_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/m_sr.png", isCorrect: true },
-            { text: "https://bonanza.rs/fon/znakovi/c_sr.png", isCorrect: false }
-        ]
-    }
-];
-
+const username;
+function closeModal()
+{
+    username = document.getElementById("default-modal").textContent;
+}
 
 let score = 0;
 let currentQuestionIndex = 0;
@@ -122,7 +69,7 @@ let currentQuestionIndex = 0;
 function displayQuestion() {
     if(currentQuestionIndex == 6) // Quiz finished
     {
-        document.getElementById("popupTitle").textContent = "Quiz Finished";
+        document.getElementById("popupTitle").textContent = "Quiz Finished " + username;
         document.getElementById("popupDesc").textContent = "Your score is " + score;
         popup.classList.remove("hidden");
         const confirmButton = document.getElementById('confirm-button');
@@ -135,7 +82,7 @@ function displayQuestion() {
     const questionContainer = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
 
-    const currentQuestion = quizQuestionsNaEngleskom[currentQuestionIndex];
+    const currentQuestion = quizQuestionsNaSrpskom[currentQuestionIndex];
     questionContainer.textContent = currentQuestion.question;
     let imgCounter = 1;
     currentQuestion.options.forEach((option, index) => {
@@ -264,8 +211,6 @@ const selectLanguage = (langCode) => {
       default:
         selectedLanguage.textContent = "Select Language";
     }
-    // Save selected language to local storage
-    localStorage.setItem('selectedLanguage', selectedLanguageCurrent);
     closeDropdown();
 };
 
