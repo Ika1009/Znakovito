@@ -44,7 +44,7 @@ const handleAudioFile = async (input) => {
         displaySignLanguage(text);
     }
 };
-function displaySignLanguage(text, languageSelectedCurrent) {
+function displaySignLanguage(text) {
     // Clear previous images
     clearSignLanguage();
     // Assuming 'text' is the input text
@@ -80,13 +80,13 @@ function displaySignLanguage(text, languageSelectedCurrent) {
     };
 
     // Function to map special words based on the selected language
-    const mapSpecialWords = (word, languageSelectedCurrent) => {
+    const mapSpecialWords = (word) => {
         const specialWordsMapping = {
             'sr': ['majk', 'prijatelj', 'zdravo'],
             'es': ['madre', 'amigo', 'hola'],
             'en': ['mother', 'friend', 'hello']
         };
-        const specialWords = specialWordsMapping[languageSelectedCurrent] || [];
+        const specialWords = specialWordsMapping[selectedLanguageCurrent] || [];
         const specialWord = specialWords.includes(word.toLowerCase()) ? word.toLowerCase() : '';
         if (specialWord && specialWord !== '') {
             showImage(specialWord);
@@ -105,18 +105,18 @@ function displaySignLanguage(text, languageSelectedCurrent) {
             showImage("ily");
             return;
         }
-        if (mapSpecialWords(word, languageSelectedCurrent)) {
+        if (mapSpecialWords(word)) {
             return; // Move to the next iteration if a special word is found
         }
         // Loop through each letter in the word
         for (let i = 0; i < word.length; i++) {
             let letter = word[i].toLowerCase();
             // Check if the character is from Cyrillic script and the language selected is Serbian
-            if (languageSelectedCurrent === 'sr' && /[\u0400-\u04FF]/.test(letter)) {
+            if (selectedLanguageCurrent === 'sr' && /[\u0400-\u04FF]/.test(letter)) {
                 letter = convertToLatin(letter);
             }
             // Check for combinations 'lj', 'nj', 'dž', and 'đ' only if the language selected is Serbian
-            if (languageSelectedCurrent === 'sr') {
+            if (selectedLanguageCurrent === 'sr') {
                 const nextLetter = i < word.length - 1 ? word[i + 1].toLowerCase() : '';
                 if ((letter === 'l' || letter === 'n') && nextLetter === 'j') {
                     letter += 'j';
