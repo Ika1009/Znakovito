@@ -115,23 +115,9 @@ const quizQuestionsNaEngleskom = [
     }
 ];
 
-
-let score = 0;
 let currentQuestionIndex = 0;
 
 function displayQuestion() {
-    if(currentQuestionIndex == 6) // Quiz finished
-    {
-        document.getElementById("popupTitle").textContent = "Quiz Finished";
-        document.getElementById("popupDesc").textContent = "Your score is " + score;
-        popup.classList.remove("hidden");
-        const confirmButton = document.getElementById('confirm-button');
-            confirmButton.addEventListener('click', function() {
-            popup.classList.add("hidden");
-            windows.location.href = "./index.html";
-        });
-    }
-    
     const questionContainer = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
 
@@ -146,37 +132,25 @@ function displayQuestion() {
         //const newGrandparent = grandparent.cloneNode(true);
         //img.parentElement.replaceChild(newGrandparent, grandparent);
         //newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
-        img.addEventListener("click", () => checkAnswer(option));
+        img.addEventListener("click", () => checkAnswer(option.isCorrect));
         
         imgCounter++;
     });
     currentQuestionIndex++;
 }
 
-function checkAnswer(option) {
-    let isCorrect = option.isCorrect;
+function checkAnswer(isCorrect) {
     console.log("Check answer")
-    const icon = document.getElementById("icon");
-    const iicon = document.getElementById("iicon");
-    const resultText = document.getElementById("popupTitle");
-    const helpText = document.getElementById("popupDesc");
+    const resultText = document.getElementById("popupDescription"); // Assuming you have a result-text element in your modal
     const acceptPrivacyEl = document.getElementById('confirm-button');
 
     if (isCorrect) {
         resultText.textContent = "Correct!";
-        helpText.textContent = "Proceed to the next question"
-        iicon.classList.add("bg-green-100");
-        icon.classList.add("text-green-600");
         console.log("Correct");
-        score++;
+        currentQuestionIndex++;
     } else {
         resultText.textContent = "Incorrect!";
-        helpText.textContent = "The correct answer was: ";
-        popup.getElementById("popupImage").src = option.text;
-        iicon.classList.add("bg-red-100");
-        icon.classList.add("text-red-600");
         console.log("Incorrect");
-        score--;
     }
 
     // Show the modal with the result
@@ -196,4 +170,3 @@ const popup = document.getElementById('info-popup');
 
 // Call displayQuestion() to start the quiz
 displayQuestion();
-

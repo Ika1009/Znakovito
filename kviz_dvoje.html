@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output2.css" rel="stylesheet" />
+    <title>Kviz u dvoje | Znakovito</title>
+  </head>
+  <body>
+    <section
+      class="items-center align-center flex h-screen w-screen bg-primary"
+      style="background-image: url(./resursi/kvizbg.svg)"
+    >
+      <div class=" sm:w-7/12 text-center border border-primary align-middle justify-center w-full h-full sm:h-2/3 p-4 bg-background shadow-md rounded-md m-auto">
+        <img src="./resursi/venac.png" width="150" class="mx-auto z-10 -mt-12"  height="150"/>
+        <div class="w-1/2 h-1/3 mt-8 mb-4 mx-auto">
+            <header id="question" class=" text-3xl font-semibold">
+              Koji znak predstavlja slovo Y u engleskom znakovnom jeziku?
+            </header>
+        </div>
+        <div class="-mt-28 w-7/12 text-center space-y-7 align-middle justify-center h-2/3 mx-auto">
+            <div class="h-1/2 w-full space-x-7 flex justify-start">
+                <div class="w-1/2 p-4 rounded-md shadow-sm hover:scale-105 bg-white align-middle justify-center flex items-center border-2 border-primary">
+                  <img id="1" src="https://bonanza.rs/fon/znakovi/c.png" class="object-fit rounded-md w-2/3"/>
+                </div>
+                <div class="w-1/2 p-4 rounded-md shadow-sm hover:scale-105 bg-white align-middle justify-center flex items-center border-2 border-primary">
+                  <img id="2" src="https://bonanza.rs/fon/znakovi/y.png" class="object-fit rounded-md w-2/3"/>
+                </div>
+            </div>
+            <div class="h-1/2 w-full space-x-7 flex justify-start">
+              <div class="w-1/2 rounded-md p-4 shadow-sm hover:scale-105 bg-white align-middle justify-center flex items-center border-2 border-primary">
+                <img id="3" src="https://bonanza.rs/fon/znakovi/u.png" class="object-fit rounded-md w-2/3"/>
+              </div>
+              <div class="w-1/2 rounded-md p-4 shadow-sm hover:scale-105 bg-white align-middle justify-center flex items-center border-2 border-primary">
+                <img id="4" src="https://bonanza.rs/fon/znakovi/d.png" class="object-fit rounded-md w-2/3"/>
+              </div>
+            </div>
+        </div>
+        <div id="info-popup" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+          <div class="relative p-4 w-full max-w-lg h-full md:h-auto">
+              <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 md:p-8">
+                  <div class="mb-4 text-sm font-light text-gray-500 dark:text-gray-400">
+                      <h3 id="popupTitle" class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Privacy info</h3>
+                      <p id="popupDescription">
+                          The backup created with this export functionnality may contain some sensitive data. We suggest you to save this archive in a securised location.
+                      </p>
+                  </div>
+                  <div class="justify-between items-center pt-0 space-y-4 sm:flex sm:space-y-0">
+                      <a id="popupText" href="#" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Learn more about privacy</a>
+                      <div class="items-center space-y-4 sm:space-x-4 sm:flex sm:space-y-0">
+                          <button id="confirm-button" type="button" class="py-2 px-4 w-full text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-auto hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Confirm</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="kviz.js"></script>
+  </body>
+</html>
