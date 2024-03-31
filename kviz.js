@@ -31,7 +31,7 @@ const quizQuestionsNaEngleskom = [
         question: "What sign represents the letter N in Serbian Sign Language?",
         options: [
             { text: "https://bonanza.rs/fon/znakovi/j_sr.png", isCorrect: false },
-            { text: "https://bonanza.rs/fon/znakovi/đ_sr.png", isCorrect: false },
+            { text: "https://bonanza.rs/fon/znakovi/d_sr.png", isCorrect: false },
             { text: "https://bonanza.rs/fon/znakovi/č_sr.png", isCorrect: false },
             { text: "https://bonanza.rs/fon/znakovi/n_sr.png", isCorrect: true }
         ]
