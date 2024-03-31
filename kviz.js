@@ -87,18 +87,14 @@ function displayQuestion() {
     currentQuestion.options.forEach((option, index) => {
         const img = document.getElementById(index + 1);
         img.src = option.text;
-    
-        //const grandparent = img.parentElement.parentElement;
-        //const newGrandparent = grandparent.cloneNode(true);
-        //img.parentElement.replaceChild(newGrandparent, grandparent);
-        //newGrandparent.addEventListener("click", () => checkAnswer(option.isCorrect));
-        img.addEventListener("click", () => checkAnswer(option));
+        const correctOption = currentQuestion.options.find(option => option.isCorrect);
+        img.addEventListener("click", () => checkAnswer(option, option.text));
         console.log("Slika " + img.src + " option " + option);
     });
     currentQuestionIndex++;
 }
 
-function checkAnswer(option) {
+function checkAnswer(option, correctSrc) {
     let isCorrect = option.isCorrect;
     console.log("Check answer")
     const icon = document.getElementById("icon");
@@ -117,7 +113,7 @@ function checkAnswer(option) {
     } else {
         resultText.textContent = "Incorrect!";
         helpText.textContent = "The correct answer was: ";
-        document.getElementById("popupImage").src = option.text;
+        document.getElementById("popupImage").src = correctSrc;
         iicon.classList.add("bg-red-100");
         check.classList.add("hidden");
         console.log("Incorrect");
