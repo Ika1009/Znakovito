@@ -1,39 +1,48 @@
-# Welcome to Znakovito: Your Guide to World Sign Languages! 🌟
+# Welcome to Znakovito: Vaš vodič kroz svetske znakovne jezike! 🌟
 
-Learn, Understand, Connect - All with one application!
+Naučite, razumite, povežite se - sve sa jednom aplikacijom!
+
+---
+### Projekat Hakatona
+
+Ova aplikacija je napravljena kao projekat za hakaton od strane FON-a i osvojila je 3. mesto na tom takmičenju. Iako je već postigla uspeh, aplikacija treba dodatno da se doradi kako bi postala pravi, funkcionalni proizvod.
+
+### Zašto Znakovito?
+
+🌍 **Svetski znakovni jezici**: Različite zemlje, različiti znakovni jezici. Sa Znakovitom, prevaziđite jezičke barijere i naučite znakovni jezik iz bilo koje zemlje.
+
+🔊 **Prevod zvuka i teksta**: Bilo da koristite glasovne poruke, tekstualni unos ili audio fajlove, Znakovito nudi precizan prevod na znakovni jezik - prilagođen različitim lokalnim dijalektima.
+
+🧠 **Učenje kroz igre**: Istražite naš kviz za jednog igrača, koji omogućava brzo učenje novih znakovnih jezika dok putujete ili se pripremate za komunikaciju na novim lokacijama.
+
+💑 **Kviz za dva igrača**: Povežite se sa svojim partnerom, prijateljem ili članom porodice kroz izazovni kviz, gde se vaše veštine u znakovnom jeziku ocenjuju.
 
 ---
 
-### Why Znakovito?
+### Specifičnost srpskog znakovnog jezika
 
-🌍 **World Sign Languages**: Different countries, different sign languages. With Znakovito, overcome language barriers and learn sign language from any country.
-
-🔊 **Audio and Text Translation**: Whether you're using voice messages, text input, or audio files, Znakovito offers precise translation into sign language - adapted to different local dialects.
-
-🧠 **Learning Through Games**: Explore our single-player quiz, which allows for quick learning of new sign languages while traveling abroad or preparing for communication in new locations.
-
-💑 **Two-player Quiz**: Feel connected with your partner, friend, or family member through a challenging quiz, where your sign language skills are scored.
+Srpski znakovni jezik se razlikuje od mnogih drugih jer koristi dvoručne znakove, dok većina drugih zemalja koristi jednoručne znakove. Učenje ovih razlika može biti izazovno, ali Znakovito vam pomaže da savladate ove jedinstvene karakteristike.
 
 ---
 
-### Statistics:
+### Statistika:
 
-There are over 466 million people who are deaf or hard of hearing worldwide. That means sign language is important to know to make the world a better place
+Postoji preko 466 miliona ljudi koji su gluvi ili nagluvi širom sveta. To znači da je znakovni jezik važan za poznavanje kako bi se svet učinio boljim mestom.
 
 ---
 
-Our application allows users to learn sign languages quickly and efficiently. Whether you are traveling abroad or want to communicate with deaf or hard of hearing individuals, our application helps you master basic signs.
-With our application, you can learn sign languages from different countries. Discover the differences and similarities between them and be prepared for your travels.
+Naša aplikacija omogućava korisnicima da brzo i efikasno uče znakovne jezike. Bilo da putujete u inostranstvo ili želite da komunicirate sa gluvim ili nagluvim osobama, naša aplikacija vam pomaže da savladate osnovne znakove.
+Sa našom aplikacijom, možete učiti znakovne jezike iz različitih zemalja. Otkrijte razlike i sličnosti među njima i budite spremni za svoja putovanja.
 
-### Why Learning Sign Languages is Important?
+### Zašto je važno učiti znakovne jezike?
 
-**Marriages and Relationships**: Statistics show that couples who communicate using sign language have stronger bonds and better understanding.
+**Brakovi i veze**: Statistike pokazuju da parovi koji komuniciraju koristeći znakovni jezik imaju jače veze i bolje razumevanje.
 
-**Easier Traveling**: Different countries have different sign languages. Our application allows you to prepare for travels and communicate with local populations.
+**Lakše putovanje**: Različite zemlje imaju različite znakovne jezike. Naša aplikacija vam omogućava da se pripremite za putovanja i komunicirate sa lokalnim stanovništvom.
 
-**Breaking Language Barriers**: Sign languages are universal. Learn them and facilitate communication with deaf or hard of hearing individuals worldwide.
+**Prevazilaženje jezičkih barijera**: Znakovni jezici su univerzalni. Naučite ih i olakšajte komunikaciju sa gluvim ili nagluvim osobama širom sveta.
 
-Join Our Community and Explore World Sign Languages!
-Let signs become your language! 🤟🌍
+Pridružite se našoj zajednici i istražite svetske znakovne jezike!
+Neka znakovi postanu vaš jezik! 🤟🌍
 
-*Znakovito - Learn, Understand, Connect!* 🌟
+*Znakovito - Naučite, razumite, povežite se!* 🌟
