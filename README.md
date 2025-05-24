@@ -17,6 +17,8 @@ Ova aplikacija je napravljena kao projekat za hakaton od strane FON-a i osvojila
 
 💑 **Kviz za dva igrača**: Povežite se sa svojim partnerom, prijateljem ili članom porodice kroz izazovni kviz, gde se vaše veštine u znakovnom jeziku ocenjuju.
 
+![Promo 0](promo2.png)  
+
 ---
 
 ### Specifičnost srpskog znakovnog jezika
@@ -41,6 +43,8 @@ Sa našom aplikacijom, možete učiti znakovne jezike iz različitih zemalja. Ot
 **Lakše putovanje**: Različite zemlje imaju različite znakovne jezike. Naša aplikacija vam omogućava da se pripremite za putovanja i komunicirate sa lokalnim stanovništvom.
 
 **Prevazilaženje jezičkih barijera**: Znakovni jezici su univerzalni. Naučite ih i olakšajte komunikaciju sa gluvim ili nagluvim osobama širom sveta.
+
+![Promo 0](promo3.png)  
 
 Pridružite se našoj zajednici i istražite svetske znakovne jezike!
 Neka znakovi postanu vaš jezik! 🤟🌍
